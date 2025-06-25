@@ -10,14 +10,6 @@ This framework evaluates language models on three critical AAC use cases:
 2. **Utterance Suggestion Generation** - Generating multiple phrase suggestions from minimal input
 3. **Topic-Based Phrase Board Generation** - Creating 12 relevant words/phrases for AAC phrase boards
 
-## Features
-
-- ✅ **Offline Operation** - Works completely offline after model download
-- ✅ **Performance Monitoring** - Comprehensive CPU, memory, and response time tracking
-- ✅ **Multiple Model Support** - Test various small models via Ollama
-- ✅ **Detailed Analysis** - Statistical analysis and model comparison
-- ✅ **AAC-Specific Evaluation** - Specialized metrics for AAC use cases
-- ✅ **Comprehensive Reporting** - Markdown reports, CSV summaries, and JSON results
 
 ## Requirements
 
@@ -48,13 +40,6 @@ chmod +x init.sh
 # With options:
 ./init.sh --device-name my-laptop --verbose
 ```
-
-The initialization script will automatically:
-- ✅ Install uv (Python package manager)
-- ✅ Install Ollama (LLM runtime)
-- ✅ Download recommended models (gemma3:1b-it-qat, tinyllama:1.1b)
-- ✅ Set up Python environment
-- ✅ Run initial tests
 
 ### Option 2: Manual Setup
 
@@ -188,13 +173,6 @@ The framework includes automatic setup scripts for easy installation:
 ./init.sh --device-name my-laptop --skip-tests --verbose
 ```
 
-**What the scripts do:**
-1. ✅ Install uv (Python package manager)
-2. ✅ Install Ollama (LLM runtime)
-3. ✅ Download recommended models (gemma3:1b-it-qat, tinyllama:1.1b)
-4. ✅ Set up Python environment and dependencies
-5. ✅ Run initial tests to verify everything works
-
 ## Understanding Results
 
 ### Output Files
@@ -244,20 +222,6 @@ uv run python generate_summary_xlsx.py --output my_report.xlsx
 # Filter by device
 uv run python generate_summary_xlsx.py --device work-laptop
 ```
-
-The Excel file contains multiple sheets:
-- **Test Run Summary**: Overview of all test runs with best models and scores
-- **Model Performance**: Detailed performance metrics for each model
-- **Detailed Responses**: Complete test responses, scores, and feedback
-- **Device Information**: Hardware and system details for each test run
-
-### Key Metrics
-
-- **Overall Score (0-1):** Weighted average across all test criteria
-- **Success Rate:** Percentage of tests passed (≥70% threshold)
-- **Response Time:** Average time to generate responses
-- **Memory Usage:** Peak memory consumption during testing
-- **Device Info:** Hardware specs and device name for tracking
 
 ### AAC Suitability Guidelines
 
@@ -312,4 +276,4 @@ To add new test cases or models:
 
 ## License
 
-[Add your license information here]
+Will Wade / MIT License
