@@ -9,8 +9,8 @@ wheels/
 # Virtual environments
 .venv
 
-.xlsx
-.json
-.csv
+*.xlsx
+.*json
+*.csv
 results/*.md
-.log
+*.log

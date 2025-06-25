@@ -1,0 +1,15 @@
+[project]
+name = "aac-model-testing"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "llm>=0.26",
+    "matplotlib>=3.10.3",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.0",
+    "psutil>=7.0.0",
+    "seaborn>=0.13.2",
+    "tabulate>=0.9.0",
+]
