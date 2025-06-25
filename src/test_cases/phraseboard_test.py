@@ -35,7 +35,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_001",
                 "input": "dogs",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["actions", "descriptions", "needs", "emotions", "objects"],
                 "expected_phrases": [
                     "walk the dog", "feed the dog", "pet the dog", "play with dog",
@@ -48,7 +48,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_002",
                 "input": "cooking",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["actions", "tools", "ingredients", "methods", "results"],
                 "expected_phrases": [
                     "cook dinner", "bake cookies", "chop vegetables", "stir the pot",
@@ -61,7 +61,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_003",
                 "input": "school",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["subjects", "people", "objects", "actions", "places"],
                 "expected_phrases": [
                     "math class", "reading time", "science project", "art class",
@@ -74,7 +74,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_004",
                 "input": "weather",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["conditions", "temperature", "activities", "clothing", "feelings"],
                 "expected_phrases": [
                     "sunny day", "rainy weather", "cloudy sky", "windy outside",
@@ -87,7 +87,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_005",
                 "input": "birthday party",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["activities", "objects", "people", "food", "emotions"],
                 "expected_phrases": [
                     "blow out candles", "open presents", "sing happy birthday", "play games",
@@ -100,7 +100,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_006",
                 "input": "hospital",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["people", "feelings", "needs", "objects", "actions"],
                 "expected_phrases": [
                     "doctor", "nurse", "patient", "visitor",
@@ -114,7 +114,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_007",
                 "input": "shopping",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["actions", "objects", "places", "needs", "payment"],
                 "expected_phrases": [
                     "buy groceries", "find item", "check price", "pay now",
@@ -127,7 +127,7 @@ class PhraseboardTest(BaseTest):
             {
                 "id": "pb_008",
                 "input": "transportation",
-                "prompt": "For this user suggest words or phrases based on the input text of: {input} that would be useful to have as a phrase board based on this topic. Return as a CSV with exactly 12 items, one per line.",
+                "prompt": "Generate 12 words/phrases for topic: {input}. Return only as CSV format, one per line, no explanations:",
                 "expected_categories": ["vehicles", "actions", "places", "needs", "safety"],
                 "expected_phrases": [
                     "car", "bus", "train", "airplane",
@@ -210,10 +210,10 @@ class PhraseboardTest(BaseTest):
     def _parse_csv_response(self, response: str) -> List[str]:
         """Parse the CSV response into individual phrases."""
         phrases = []
-        
-        # Clean the response
-        cleaned = response.strip()
-        
+
+        # Clean the response comprehensively
+        cleaned = self._clean_response(response)
+
         # Remove common prefixes
         prefixes_to_remove = [
             "Here are 12 words/phrases:",
@@ -221,7 +221,7 @@ class PhraseboardTest(BaseTest):
             "CSV format:",
             "Here are the phrases:",
         ]
-        
+
         for prefix in prefixes_to_remove:
             if cleaned.lower().startswith(prefix.lower()):
                 cleaned = cleaned[len(prefix):].strip()
@@ -249,7 +249,39 @@ class PhraseboardTest(BaseTest):
                     phrases.append(line)
         
         return phrases[:12]  # Limit to 12 phrases as requested
-    
+
+    def _clean_response(self, response: str) -> str:
+        """Clean and normalize the model's response."""
+        # Remove thinking tags and their content
+        cleaned = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+
+        # Remove extra whitespace and normalize
+        cleaned = re.sub(r'\s+', ' ', cleaned.strip())
+
+        # Remove common prefixes that models might add
+        prefixes_to_remove = [
+            "Here are 12 words/phrases for",
+            "Here's a CSV list of 12",
+            "CSV format for",
+            "12 words/phrases:",
+            "Here are the phrases:",
+            "Generated phrases:",
+        ]
+
+        for prefix in prefixes_to_remove:
+            if cleaned.lower().startswith(prefix.lower()):
+                cleaned = cleaned[len(prefix):].strip()
+
+        # Remove markdown formatting
+        cleaned = re.sub(r'\*\*(.*?)\*\*', r'\1', cleaned)  # Remove bold
+        cleaned = re.sub(r'\*(.*?)\*', r'\1', cleaned)      # Remove italic
+
+        # Remove quotes if the entire response is quoted
+        if cleaned.startswith('"') and cleaned.endswith('"'):
+            cleaned = cleaned[1:-1]
+
+        return cleaned
+
     def _evaluate_format(self, phrases: List[str], original_response: str) -> float:
         """Evaluate if the response follows the requested CSV format."""
         score = 1.0

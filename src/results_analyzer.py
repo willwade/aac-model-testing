@@ -6,7 +6,7 @@ statistical analysis, model comparison, and performance insights.
 """
 
 import logging
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List
 from datetime import datetime
 import statistics
 
@@ -216,7 +216,7 @@ class ResultsAnalyzer:
                 continue
             
             summary = model_data.get("summary", {})
-            perf_metrics = model_data.get("performance_metrics", {})
+            model_data.get("performance_metrics", {})
             
             # Collect overall performance data
             avg_response_time = summary.get("average_response_time", 0)

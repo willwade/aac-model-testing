@@ -12,7 +12,6 @@ Usage:
     python view_results.py --device my-laptop # Filter by device
 """
 
-import sys
 import json
 import argparse
 from pathlib import Path

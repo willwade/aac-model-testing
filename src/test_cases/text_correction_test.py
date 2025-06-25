@@ -218,25 +218,46 @@ class TextCorrectionTest(BaseTest):
     
     def _clean_response(self, response: str) -> str:
         """Clean and normalize the model's response."""
+        # Remove thinking tags and their content
+        cleaned = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+
         # Remove extra whitespace and normalize
-        cleaned = re.sub(r'\s+', ' ', response.strip())
-        
+        cleaned = re.sub(r'\s+', ' ', cleaned.strip())
+
         # Remove common prefixes that models might add
         prefixes_to_remove = [
             "Here's the corrected sentence:",
+            "Here's a grammatically correct and natural-sounding version of your sentence:",
+            "Here is the corrected sentence:",
             "Corrected:",
             "The corrected sentence is:",
             "Here is the correction:",
+            "Fixed sentence:",
+            "Corrected version:",
         ]
-        
+
         for prefix in prefixes_to_remove:
             if cleaned.lower().startswith(prefix.lower()):
                 cleaned = cleaned[len(prefix):].strip()
-        
+
+        # Remove markdown formatting
+        cleaned = re.sub(r'\*\*(.*?)\*\*', r'\1', cleaned)  # Remove bold
+        cleaned = re.sub(r'\*(.*?)\*', r'\1', cleaned)      # Remove italic
+
         # Remove quotes if the entire response is quoted
         if cleaned.startswith('"') and cleaned.endswith('"'):
             cleaned = cleaned[1:-1]
-        
+
+        # Extract just the first sentence if there are multiple sentences with explanations
+        sentences = cleaned.split('.')
+        if len(sentences) > 1:
+            # Look for the actual corrected sentence (usually the first complete one)
+            for sentence in sentences:
+                sentence = sentence.strip()
+                if len(sentence.split()) >= 4:  # Reasonable sentence length
+                    cleaned = sentence + '.'
+                    break
+
         return cleaned
     
     def _evaluate_grammar(self, test_item: Dict[str, Any], response: str) -> float:
@@ -319,7 +340,7 @@ class TextCorrectionTest(BaseTest):
         # This is a simplified semantic evaluation
         # In a production system, you might use semantic similarity models
         
-        input_text = test_item["input"].lower()
+        test_item["input"].lower()
         response_text = response.lower()
         
         # Check if key semantic elements are present

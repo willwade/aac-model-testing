@@ -5,12 +5,10 @@ This module contains the main AACTestingFramework class that orchestrates
 the testing of language models for AAC use cases.
 """
 
-import os
 import json
-import time
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any
 import logging
 
 from test_cases import TextCorrectionTest, UtteranceSuggestionTest, PhraseboardTest

@@ -148,11 +148,14 @@ class BaseTest(ABC):
             response = model.generate_response(prompt)
         except Exception as e:
             raise Exception(f"Model generation failed: {str(e)}")
-        
+
         response_time = time.time() - item_start_time
-        
+
+        # Validate response format and apply fallback if needed
+        validated_response = self._validate_and_clean_response(test_item, response)
+
         # Evaluate the response
-        evaluation = self.evaluate_response(test_item, response)
+        evaluation = self.evaluate_response(test_item, validated_response)
         
         # Combine results
         result = {
@@ -160,10 +163,11 @@ class BaseTest(ABC):
             "input": test_item.get("input", ""),
             "prompt": prompt,
             "response": response,
+            "validated_response": validated_response,
             "response_time": response_time,
             **evaluation
         }
-        
+
         return result
     
     def _prepare_prompt(self, test_item: Dict[str, Any]) -> str:
@@ -242,7 +246,7 @@ class BaseTest(ABC):
     def get_scoring_criteria(self) -> Dict[str, str]:
         """
         Get the scoring criteria for this test case.
-        
+
         Returns:
             Dictionary mapping criteria names to descriptions
         """
@@ -251,3 +255,44 @@ class BaseTest(ABC):
             "relevance": "How relevant the response is to the input",
             "completeness": "How complete the response is"
         }
+
+    def _validate_and_clean_response(self, test_item: Dict[str, Any], response: str) -> str:
+        """
+        Validate response format and apply cleaning/fallback handling.
+
+        Args:
+            test_item: The test item dictionary
+            response: The raw model response
+
+        Returns:
+            Cleaned and validated response
+        """
+        # Basic cleaning - remove thinking tags and normalize whitespace
+        import re
+        cleaned = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+        cleaned = re.sub(r'\s+', ' ', cleaned.strip())
+
+        # Check if response is empty or too short
+        if not cleaned or len(cleaned.strip()) < 3:
+            self.logger.warning(f"Empty or too short response for {test_item.get('id', 'unknown')}")
+            return "No valid response generated"
+
+        # Check for common problematic patterns
+        problematic_patterns = [
+            r'^I cannot',
+            r'^I can\'t',
+            r'^Sorry, I cannot',
+            r'^I\'m unable to',
+            r'^As an AI',
+        ]
+
+        for pattern in problematic_patterns:
+            if re.match(pattern, cleaned, re.IGNORECASE):
+                self.logger.warning(f"Model refused to respond for {test_item.get('id', 'unknown')}")
+                return "Model refused to provide response"
+
+        # Log if response seems overly verbose (potential issue)
+        if len(cleaned.split()) > 100:
+            self.logger.warning(f"Very long response for {test_item.get('id', 'unknown')} - may need better cleaning")
+
+        return cleaned

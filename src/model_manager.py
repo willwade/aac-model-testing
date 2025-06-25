@@ -7,8 +7,7 @@ through Simon Willison's LLM tool and Ollama backend.
 
 import subprocess
 import logging
-from typing import Optional, Dict, Any, List
-import json
+from typing import Dict, Any, List
 import time
 import llm
 

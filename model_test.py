@@ -181,7 +181,7 @@ Examples:
         
         # Model comparison for multiple models
         if len(model_summaries) > 1:
-            print(f"\n5. Model Comparison:")
+            print("\n5. Model Comparison:")
             print("-" * 60)
             
             # Find best overall model

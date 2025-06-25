@@ -33,7 +33,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_001",
                 "input": "pizza vegetarian",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["request", "question", "preference", "statement"],
                 "expected_phrases": [
                     "I want a vegetarian pizza",
@@ -48,7 +48,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_002",
                 "input": "doctor appointment",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["scheduling", "reminder", "question", "statement"],
                 "expected_phrases": [
                     "I have a doctor appointment",
@@ -63,7 +63,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_003",
                 "input": "tired sleep",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["statement", "request", "explanation"],
                 "expected_phrases": [
                     "I'm tired and need to sleep",
@@ -78,7 +78,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_004",
                 "input": "help computer",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["request", "question", "problem"],
                 "expected_phrases": [
                     "I need help with my computer",
@@ -93,7 +93,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_005",
                 "input": "birthday party friend",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["invitation", "statement", "question", "planning"],
                 "expected_phrases": [
                     "My friend is having a birthday party",
@@ -108,7 +108,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_006",
                 "input": "weather cold jacket",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["observation", "request", "statement"],
                 "expected_phrases": [
                     "The weather is cold, I need a jacket",
@@ -123,7 +123,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_007",
                 "input": "store buy milk",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["task", "reminder", "request", "statement"],
                 "expected_phrases": [
                     "I need to go to the store to buy milk",
@@ -138,7 +138,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_008",
                 "input": "phone call mom",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["task", "reminder", "statement", "request"],
                 "expected_phrases": [
                     "I need to call my mom",
@@ -153,7 +153,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_009",
                 "input": "work meeting important",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["statement", "reminder", "question", "concern"],
                 "expected_phrases": [
                     "I have an important work meeting",
@@ -168,7 +168,7 @@ class UtteranceSuggestionTest(BaseTest):
             {
                 "id": "us_010",
                 "input": "happy excited vacation",
-                "prompt": "Generate 4 phrases from these keywords: {input}. Return only the phrases separated by commas, no explanations: phrase1, phrase2, phrase3, phrase4",
+                "prompt": "Create 4 different sentences using: {input}. Format: sentence1, sentence2, sentence3, sentence4",
                 "expected_categories": ["emotion", "statement", "sharing"],
                 "expected_phrases": [
                     "I'm happy and excited about my vacation",
