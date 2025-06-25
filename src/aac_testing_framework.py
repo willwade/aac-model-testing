@@ -132,10 +132,15 @@ class AACTestingFramework:
             "results": {}
         }
         
-        for model_name in self.models:
-            self.logger.info(f"Testing model: {model_name}")
+        for i, model_name in enumerate(self.models):
+            self.logger.info(f"Testing model: {model_name} ({i+1}/{len(self.models)})")
             model_results = self._test_single_model(model_name, test_cases_to_run)
             all_results["results"][model_name] = model_results
+
+            # Force cleanup between models to free memory
+            if i < len(self.models) - 1:  # Don't cleanup after the last model
+                self.logger.info(f"Cleaning up after {model_name} to free memory...")
+                self._cleanup_model_memory()
         
         # Save raw results with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -160,7 +165,20 @@ class AACTestingFramework:
         self.logger.info(f"Raw results saved to: {results_file}")
         self.logger.info(f"Summary appended to: {master_results_file}")
         return all_results
-    
+
+    def _cleanup_model_memory(self):
+        """Force cleanup to free memory between models."""
+        import gc
+        import time
+
+        # Force garbage collection
+        gc.collect()
+
+        # Give the system a moment to clean up
+        time.sleep(2)
+
+        self.logger.debug("Memory cleanup completed")
+
     def _test_single_model(self, model_name: str, test_cases_to_run: List[str]) -> Dict[str, Any]:
         """
         Test a single model on the specified test cases.
@@ -179,37 +197,46 @@ class AACTestingFramework:
             "summary": {}
         }
         
+        model = None
         try:
             # Initialize model
             model = self.model_manager.get_model(model_name)
-            
+
             for test_case_name in test_cases_to_run:
                 self.logger.info(f"Running {test_case_name} test for {model_name}")
-                
+
                 # Start performance monitoring
                 if self.performance_monitor:
                     self.performance_monitor.start_monitoring()
-                
+
                 # Run test case
                 test_case = self.test_cases[test_case_name]
                 test_result = test_case.run_test(model)
-                
+
                 # Stop performance monitoring
                 if self.performance_monitor:
                     perf_metrics = self.performance_monitor.stop_monitoring()
                     model_results["performance_metrics"][test_case_name] = perf_metrics
-                
+
                 model_results["test_results"][test_case_name] = test_result
-                
+
                 self.logger.info(f"Completed {test_case_name} test for {model_name}")
             
             # Generate summary
             model_results["summary"] = self._generate_model_summary(model_results)
-            
+
         except Exception as e:
             self.logger.error(f"Error testing model {model_name}: {str(e)}")
             model_results["error"] = str(e)
-        
+        finally:
+            # Clean up model resources
+            if model is not None:
+                try:
+                    model.cleanup()
+                    self.logger.debug(f"Cleaned up model {model_name}")
+                except Exception as e:
+                    self.logger.warning(f"Error cleaning up model {model_name}: {str(e)}")
+
         return model_results
     
     def _generate_model_summary(self, model_results: Dict[str, Any]) -> Dict[str, Any]:
