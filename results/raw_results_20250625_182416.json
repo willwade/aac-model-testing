@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "timestamp": "2025-06-25T18:24:13.946668",
+    "models": [
+      "gemma3:1b-it-qat"
+    ],
+    "test_cases": [
+      "text_correction"
+    ],
+    "framework_version": "1.0.0",
+    "device_info": {
+      "device_name": "work-laptop",
+      "hostname": "SBOX1487",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "system": "Windows",
+      "processor": "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+      "architecture": "64bit",
+      "python_version": "3.11.4",
+      "cpu_count": 16,
+      "cpu_count_logical": 16,
+      "total_memory_gb": 15.19,
+      "available_memory_gb": 2.45
+    }
+  },
+  "results": {
+    "gemma3:1b-it-qat": {
+      "model_name": "gemma3:1b-it-qat",
+      "test_results": {
+        "text_correction": {
+          "test_name": "Text Correction for AAC Users",
+          "total_tests": 10,
+          "passed_tests": 9,
+          "failed_tests": 1,
+          "individual_results": [
+            {
+              "test_item_id": "tc_001",
+              "input": "me want eat pizza now hungry",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: me want eat pizza now hungry",
+              "response": "I want to eat pizza now I'm hungry.",
+              "validated_response": "I want to eat pizza now I'm hungry.",
+              "response_time": 0.17189836502075195,
+              "score": 0.9277777777777778,
+              "passed": true,
+              "feedback": "Excellent correction!",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.8,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.8888888888888888
+              }
+            },
+            {
+              "test_item_id": "tc_002",
+              "input": "doctor appointment tomorrow need remember",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: doctor appointment tomorrow need remember",
+              "response": "Remember the doctor appointment tomorrow.",
+              "validated_response": "Remember the doctor appointment tomorrow.",
+              "response_time": 0.12313699722290039,
+              "score": 0.7888888888888889,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.6,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.4444444444444444
+              }
+            },
+            {
+              "test_item_id": "tc_003",
+              "input": "car broken can't go work today",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: car broken can't go work today",
+              "response": "Car broke can't go work today.",
+              "validated_response": "Car broke can't go work today.",
+              "response_time": 0.14339542388916016,
+              "score": 0.8257575757575758,
+              "passed": true,
+              "feedback": "Excellent correction! Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.6666666666666666,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.5454545454545454
+              }
+            },
+            {
+              "test_item_id": "tc_004",
+              "input": "happy birthday mom love you much",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: happy birthday mom love you much",
+              "response": "Happy birthday mom, love you.",
+              "validated_response": "Happy birthday mom, love you.",
+              "response_time": 0.12182831764221191,
+              "score": 0.7888888888888889,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.6,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.4444444444444444
+              }
+            },
+            {
+              "test_item_id": "tc_005",
+              "input": "weather cold outside need jacket warm",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: weather cold outside need jacket warm",
+              "response": "weather cold outside need jacket warm",
+              "validated_response": "weather cold outside need jacket warm",
+              "response_time": 0.1142120361328125,
+              "score": 0.8066666666666666,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.3333333333333333
+              }
+            },
+            {
+              "test_item_id": "tc_006",
+              "input": "phone battery dead charge it please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: phone battery dead charge it please",
+              "response": "phone battery dead, please.",
+              "validated_response": "phone battery dead, please.",
+              "response_time": 0.11742854118347168,
+              "score": 0.6745454545454546,
+              "passed": false,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 0.4,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.2727272727272727
+              }
+            },
+            {
+              "test_item_id": "tc_007",
+              "input": "store buy milk bread eggs list",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: store buy milk bread eggs list",
+              "response": "Store buy milk bread eggs list",
+              "validated_response": "Store buy milk bread eggs list",
+              "response_time": 0.1154177188873291,
+              "score": 0.8128571428571428,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.21428571428571427
+              }
+            },
+            {
+              "test_item_id": "tc_008",
+              "input": "tired sleep early tonight work tomorrow",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: tired sleep early tonight work tomorrow",
+              "response": "tiredly sleep early tonight work tomorrow",
+              "validated_response": "tiredly sleep early tonight work tomorrow",
+              "response_time": 0.12110018730163574,
+              "score": 0.7554761904761905,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.2857142857142857
+              }
+            },
+            {
+              "test_item_id": "tc_009",
+              "input": "friend birthday party saturday fun time",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: friend birthday party saturday fun time",
+              "response": "Friend birthday party Saturday fun time.",
+              "validated_response": "Friend birthday party Saturday fun time.",
+              "response_time": 0.12347054481506348,
+              "score": 0.8116666666666666,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.26666666666666666
+              }
+            },
+            {
+              "test_item_id": "tc_010",
+              "input": "computer slow need fix help please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: computer slow need fix help please",
+              "response": "Computer needs fixing help please.",
+              "validated_response": "Computer needs fixing help please.",
+              "response_time": 0.11273002624511719,
+              "score": 0.706060606060606,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.3333333333333333,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.36363636363636365
+              }
+            }
+          ],
+          "overall_score": 0.7898585858585858,
+          "execution_time": 1.266218662261963,
+          "summary_metrics": {
+            "avg_response_time": 0.12646181583404542,
+            "min_response_time": 0.11273002624511719,
+            "max_response_time": 0.17189836502075195,
+            "total_response_time": 1.264618158340454,
+            "avg_score": 0.7898585858585858,
+            "min_score": 0.6745454545454546,
+            "max_score": 0.9277777777777778,
+            "score_std": 0.06920238272754684
+          },
+          "success_rate": 0.9
+        }
+      },
+      "performance_metrics": {
+        "text_correction": {
+          "duration": 1.29484224319458,
+          "start_time": "2025-06-25T18:24:14.916839",
+          "end_time": "2025-06-25T18:24:16.211681",
+          "sample_count": 3,
+          "sampling_interval": 0.5,
+          "response_time": 1.29484224319458,
+          "cpu_usage": {
+            "average": 15.700000000000001,
+            "peak": 23.8,
+            "minimum": 0.0,
+            "std_dev": 13.598897014096401
+          },
+          "memory_usage_mb": {
+            "average": 13059.665364583334,
+            "peak": 13071.17578125,
+            "minimum": 13041.40234375,
+            "std_dev": 15.994144003833545
+          },
+          "memory_usage_percent": {
+            "average": 83.93333333333334,
+            "peak": 84.0,
+            "minimum": 83.8,
+            "std_dev": 0.1154700538379268
+          },
+          "peak_memory_mb": 13071.17578125,
+          "io_metrics": {
+            "disk_read_mb": 0.0625,
+            "disk_write_mb": 0.89453125,
+            "network_sent_mb": 0.000102996826171875,
+            "network_recv_mb": 0.000247955322265625
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        }
+      },
+      "summary": {
+        "total_tests": 1,
+        "successful_tests": 1,
+        "average_response_time": 1.29484224319458,
+        "average_memory_usage": 13071.17578125,
+        "overall_score": 0.7898585858585858
+      }
+    }
+  }
+}

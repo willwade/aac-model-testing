@@ -72,7 +72,25 @@ class ModelManager:
     def _fetch_available_models(self) -> Dict[str, Any]:
         """Fetch locally installed Ollama models suitable for AAC testing."""
         try:
-            # First, get locally installed models from Ollama directly
+            # First, check if ollama command is available
+            try:
+                version_result = subprocess.run(
+                    ["ollama", "--version"],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                if version_result.returncode == 0:
+                    self.logger.info(f"Ollama version: {version_result.stdout.strip()}")
+                else:
+                    self.logger.warning(f"Ollama version check failed: {version_result.stderr}")
+            except FileNotFoundError:
+                raise Exception("Ollama not found. Please ensure Ollama is installed and in PATH")
+            except Exception as e:
+                self.logger.warning(f"Could not check Ollama version: {str(e)}")
+
+            # Get locally installed models from Ollama
+            self.logger.debug("Fetching locally installed models from Ollama...")
             result = subprocess.run(
                 ["ollama", "list"],
                 capture_output=True,
@@ -81,11 +99,13 @@ class ModelManager:
             )
 
             if result.returncode != 0:
-                raise Exception(f"Failed to list local Ollama models: {result.stderr}")
+                error_msg = result.stderr.strip() if result.stderr else "Unknown error"
+                raise Exception(f"Failed to list local Ollama models: {error_msg}")
 
             # Parse the ollama list output
             models = {}
             lines = result.stdout.strip().split('\n')
+            self.logger.debug(f"Ollama list output: {len(lines)} lines")
 
             for line in lines[1:]:  # Skip header line
                 if not line.strip():
@@ -95,6 +115,7 @@ class ModelManager:
                 parts = line.split()
                 if len(parts) >= 3:
                     model_name = parts[0]
+                    self.logger.debug(f"Found model: {model_name}")
 
                     # Only include models suitable for AAC
                     if self._is_suitable_for_aac(model_name):
@@ -107,8 +128,11 @@ class ModelManager:
                             'size': parts[2] if len(parts) > 2 else 'unknown',
                             'recommended_for_aac': True
                         }
+                        self.logger.debug(f"Model {model_name} is suitable for AAC")
+                    else:
+                        self.logger.debug(f"Model {model_name} is not suitable for AAC")
 
-            self.logger.info(f"Found {len(models)} locally installed AAC-suitable models")
+            self.logger.info(f"Found {len(models)} locally installed AAC-suitable models: {list(models.keys())}")
 
             if not models:
                 self.logger.warning("No suitable AAC models found locally. Consider installing: gemma3:1b-it-qat, tinyllama:1.1b")
@@ -116,7 +140,7 @@ class ModelManager:
             return models
 
         except subprocess.TimeoutExpired:
-            raise Exception("Model listing timed out")
+            raise Exception("Model listing timed out - Ollama may be starting up")
         except FileNotFoundError:
             raise Exception("Ollama not found. Please ensure Ollama is installed and in PATH")
         except Exception as e:

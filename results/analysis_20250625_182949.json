@@ -1,0 +1,297 @@
+{
+  "analysis_timestamp": "2025-06-25T18:29:49.733624",
+  "summary": {
+    "total_models_tested": 3,
+    "successful_models": 3,
+    "failed_models": 0,
+    "test_cases_run": 3,
+    "overall_statistics": {
+      "average_score": 0.5768616299607034,
+      "score_std_dev": 0.052223448708909166,
+      "average_response_time": 8.358373774422539,
+      "average_memory_usage": 13314.274739583332
+    }
+  },
+  "model_rankings": [
+    {
+      "model_name": "gemma3:1b-it-qat",
+      "composite_score": 0.5399327923876529,
+      "overall_score": 0.6047021541326726,
+      "success_rate": 1.0,
+      "average_response_time": 4.53737751642863,
+      "average_memory_usage": 13295.135416666666,
+      "rank": 1
+    },
+    {
+      "model_name": "qwen3:0.6b",
+      "composite_score": 0.5259486264132786,
+      "overall_score": 0.6092659564365676,
+      "success_rate": 1.0,
+      "average_response_time": 12.997519890467325,
+      "average_memory_usage": 13151.658854166666,
+      "rank": 2
+    },
+    {
+      "model_name": "tinyllama:1.1b",
+      "composite_score": 0.48621999268669003,
+      "overall_score": 0.5166167793128701,
+      "success_rate": 1.0,
+      "average_response_time": 7.540223916371663,
+      "average_memory_usage": 13496.029947916666,
+      "rank": 3
+    }
+  ],
+  "test_case_analysis": {
+    "text_correction": {
+      "scores": [
+        0.7745697358197359,
+        0.6487362668508713,
+        0.7552783882783883
+      ],
+      "response_times": [],
+      "success_rates": [
+        0.9,
+        0.3,
+        0.8
+      ],
+      "model_performances": {
+        "qwen3:0.6b": {
+          "score": 0.7745697358197359,
+          "success_rate": 0.9
+        },
+        "tinyllama:1.1b": {
+          "score": 0.6487362668508713,
+          "success_rate": 0.3
+        },
+        "gemma3:1b-it-qat": {
+          "score": 0.7552783882783883,
+          "success_rate": 0.8
+        }
+      },
+      "statistics": {
+        "average_score": 0.7261947969829985,
+        "score_std_dev": 0.06777098892713983,
+        "min_score": 0.6487362668508713,
+        "max_score": 0.7745697358197359,
+        "average_success_rate": 0.6666666666666667,
+        "average_response_time": 0,
+        "models_tested": 3
+      },
+      "best_model": "qwen3:0.6b",
+      "worst_model": "tinyllama:1.1b"
+    },
+    "utterance_suggestions": {
+      "scores": [
+        0.6813097307121893,
+        0.5800897655321835,
+        0.684192657452963
+      ],
+      "response_times": [],
+      "success_rates": [
+        0.2,
+        0.0,
+        0.4
+      ],
+      "model_performances": {
+        "qwen3:0.6b": {
+          "score": 0.6813097307121893,
+          "success_rate": 0.2
+        },
+        "tinyllama:1.1b": {
+          "score": 0.5800897655321835,
+          "success_rate": 0.0
+        },
+        "gemma3:1b-it-qat": {
+          "score": 0.684192657452963,
+          "success_rate": 0.4
+        }
+      },
+      "statistics": {
+        "average_score": 0.6485307178991119,
+        "score_std_dev": 0.05928912874479848,
+        "min_score": 0.5800897655321835,
+        "max_score": 0.684192657452963,
+        "average_success_rate": 0.2,
+        "average_response_time": 0,
+        "models_tested": 3
+      },
+      "best_model": "gemma3:1b-it-qat",
+      "worst_model": "tinyllama:1.1b"
+    },
+    "phrase_boards": {
+      "scores": [
+        0.37191840277777777,
+        0.32102430555555556,
+        0.37463541666666667
+      ],
+      "response_times": [],
+      "success_rates": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_performances": {
+        "qwen3:0.6b": {
+          "score": 0.37191840277777777,
+          "success_rate": 0.0
+        },
+        "tinyllama:1.1b": {
+          "score": 0.32102430555555556,
+          "success_rate": 0.0
+        },
+        "gemma3:1b-it-qat": {
+          "score": 0.37463541666666667,
+          "success_rate": 0.0
+        }
+      },
+      "statistics": {
+        "average_score": 0.355859375,
+        "score_std_dev": 0.030198627262138154,
+        "min_score": 0.32102430555555556,
+        "max_score": 0.37463541666666667,
+        "average_success_rate": 0.0,
+        "average_response_time": 0,
+        "models_tested": 3
+      },
+      "best_model": "gemma3:1b-it-qat",
+      "worst_model": "tinyllama:1.1b"
+    }
+  },
+  "performance_analysis": {
+    "statistics": {
+      "response_time_stats": {
+        "average": 8.358373774422539,
+        "median": 7.540223916371663,
+        "std_dev": 4.289000948930039,
+        "min": 4.53737751642863,
+        "max": 12.997519890467325
+      },
+      "memory_usage_stats": {
+        "average": 13314.274739583332,
+        "median": 13295.135416666666,
+        "std_dev": 172.9814955824008,
+        "min": 13151.658854166666,
+        "max": 13496.029947916666
+      },
+      "most_efficient_model": {
+        "name": "gemma3:1b-it-qat",
+        "efficiency_score": 0.010024064115881803,
+        "quality_score": 0.6047021541326726,
+        "response_time": 4.53737751642863,
+        "memory_usage": 13295.135416666666
+      }
+    },
+    "efficiency_rankings": [
+      [
+        "gemma3:1b-it-qat",
+        {
+          "efficiency_score": 0.010024064115881803,
+          "quality_score": 0.6047021541326726,
+          "response_time": 4.53737751642863,
+          "memory_usage": 13295.135416666666
+        }
+      ],
+      [
+        "tinyllama:1.1b",
+        {
+          "efficiency_score": 0.005076661789019921,
+          "quality_score": 0.5166167793128701,
+          "response_time": 7.540223916371663,
+          "memory_usage": 13496.029947916666
+        }
+      ],
+      [
+        "qwen3:0.6b",
+        {
+          "efficiency_score": 0.0035642313537675506,
+          "quality_score": 0.6092659564365676,
+          "response_time": 12.997519890467325,
+          "memory_usage": 13151.658854166666
+        }
+      ]
+    ]
+  },
+  "recommendations": [
+    {
+      "type": "best_overall",
+      "title": "Best Overall Model",
+      "description": "gemma3:1b-it-qat shows the best overall performance",
+      "details": {
+        "model": "gemma3:1b-it-qat",
+        "composite_score": 0.5399327923876529,
+        "overall_score": 0.6047021541326726,
+        "response_time": 4.53737751642863
+      },
+      "priority": "high"
+    },
+    {
+      "type": "fastest_response",
+      "title": "Fastest Response Time",
+      "description": "gemma3:1b-it-qat has the fastest average response time",
+      "details": {
+        "model": "gemma3:1b-it-qat",
+        "response_time": 4.53737751642863
+      },
+      "priority": "medium"
+    },
+    {
+      "type": "memory_efficient",
+      "title": "Most Memory Efficient",
+      "description": "qwen3:0.6b uses the least memory",
+      "details": {
+        "model": "qwen3:0.6b",
+        "memory_usage": 13151.658854166666
+      },
+      "priority": "medium"
+    },
+    {
+      "type": "test_case_specific",
+      "title": "Best for Text Correction",
+      "description": "qwen3:0.6b performs best on text_correction",
+      "details": {
+        "model": "qwen3:0.6b",
+        "test_case": "text_correction",
+        "score": 0.7745697358197359
+      },
+      "priority": "low"
+    },
+    {
+      "type": "test_case_specific",
+      "title": "Best for Utterance Suggestions",
+      "description": "gemma3:1b-it-qat performs best on utterance_suggestions",
+      "details": {
+        "model": "gemma3:1b-it-qat",
+        "test_case": "utterance_suggestions",
+        "score": 0.684192657452963
+      },
+      "priority": "low"
+    },
+    {
+      "type": "test_case_specific",
+      "title": "Best for Phrase Boards",
+      "description": "gemma3:1b-it-qat performs best on phrase_boards",
+      "details": {
+        "model": "gemma3:1b-it-qat",
+        "test_case": "phrase_boards",
+        "score": 0.37463541666666667
+      },
+      "priority": "low"
+    }
+  ],
+  "statistical_insights": {
+    "correlations": {
+      "score_vs_response_time": 0.20813579276977767,
+      "score_vs_memory_usage": -0.9272026114411588
+    },
+    "distributions": {
+      "score_distribution": {
+        "mean": 0.5768616299607034,
+        "median": 0.6047021541326726,
+        "std_dev": 0.052223448708909166,
+        "range": 0.09264917712369747
+      }
+    },
+    "outliers": {},
+    "trends": {}
+  }
+}

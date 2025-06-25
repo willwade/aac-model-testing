@@ -1,0 +1,2095 @@
+{
+  "metadata": {
+    "timestamp": "2025-06-25T18:33:42.070278",
+    "models": [
+      "qwen3:0.6b",
+      "tinyllama:1.1b",
+      "gemma3:1b-it-qat"
+    ],
+    "test_cases": [
+      "text_correction",
+      "utterance_suggestions",
+      "phrase_boards"
+    ],
+    "framework_version": "1.0.0",
+    "device_info": {
+      "device_name": "work-laptop",
+      "hostname": "SBOX1487",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "system": "Windows",
+      "processor": "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+      "architecture": "64bit",
+      "python_version": "3.11.4",
+      "cpu_count": 16,
+      "cpu_count_logical": 16,
+      "total_memory_gb": 15.19,
+      "available_memory_gb": 1.38
+    }
+  },
+  "results": {
+    "qwen3:0.6b": {
+      "model_name": "qwen3:0.6b",
+      "test_results": {
+        "text_correction": {
+          "test_name": "Text Correction for AAC Users",
+          "total_tests": 10,
+          "passed_tests": 8,
+          "failed_tests": 2,
+          "individual_results": [
+            {
+              "test_item_id": "tc_001",
+              "input": "me want eat pizza now hungry",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: me want eat pizza now hungry",
+              "response": "<think>\nOkay, let me look at this sentence. The user provided: \"me want eat pizza now hungry\". The task is to fix the sentence and return only the corrected version without any explanations.\n\nFirst, I need to check for grammar and spelling errors. The sentence starts with \"me\", which is correct as a pronoun. Then \"want eat pizza now hungry\". The structure is a bit off. \"Eat pizza\" is correct, but maybe it's better phrased as \"to eat pizza\" to make it more active. Also, \"now hungry\" is a common phrase, but maybe \"now\" could be replaced with \"then\" or \"today\" depending on context. However, the original sentence is in the present tense, which is correct.\n\nWait, the user wrote \"me want eat pizza now hungry\". Let me break it down. \"Me\" is correct, \"want\" is correct, \"eat\" is the past tense, \"pizza\" is correct, \"now\" is correct. But the phrase \"now hungry\" is a bit awkward. Maybe \"now\" could be replaced with \"then\" or \"today\". However, \"now\" is already correct. So maybe the main issue is the structure. Maybe the user wants to make it more natural. Let me check again.\n\nThe original sentence: \"me want eat pizza now hungry\". The main issue is that \"now\" is part of the phrase, which is correct. Alternatively, maybe \"now\" could be \"then\" or \"today\". But since \"now\" is already a correct time expression, perhaps the sentence is already correct. But maybe the user wants to make it more concise. Let me check if \"now\" is the correct time phrase. Yes, \"now\" is correct. So the corrected sentence would be \"me want to eat pizza now hungry\". That changes \"now\" to \"now\" and maybe the structure. Alternatively, \"me want to eat pizza now\" would be correct. So the corrected sentence is \"me want to eat pizza now hungry\". But the user's input has \"now hungry\", so maybe the correct version is \"me want to eat pizza now hungry\". That's the correction.\n</think>\n\nme want to eat pizza now hungry",
+              "validated_response": "me want to eat pizza now hungry",
+              "response_time": 2.2598772048950195,
+              "score": 0.8309090909090909,
+              "passed": true,
+              "feedback": "Excellent correction! The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.45454545454545453
+              }
+            },
+            {
+              "test_item_id": "tc_002",
+              "input": "doctor appointment tomorrow need remember",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: doctor appointment tomorrow need remember",
+              "response": "<think>\nOkay, the user wants me to fix the sentence \"doctor appointment tomorrow need remember\" and return only the corrected sentence without explanations. Let me start by reading the original sentence carefully.\n\nThe sentence is: \"doctor appointment tomorrow need remember\". First, I notice that \"need remember\" is a bit unclear. Maybe the intended meaning is that the patient needs to remember something about their appointment. So, the correct structure would be to make the appointment and the need for remembering both parts. \n\nI think the correct way is to combine the two elements. So, \"Doctor's appointment tomorrow needs to be remembered\". That way, it's clear that both the appointment and the need for remembering are there. Let me check if that's accurate. Yes, \"Doctor's appointment tomorrow needs to be remembered\" makes sense. \n\nI should make sure there's no other possible corrections. The original sentence is a bit awkward, but combining the two elements properly would be the right fix. So, the corrected sentence is as I just wrote.\n</think>\n\nDoctor's appointment tomorrow needs to be remembered.",
+              "validated_response": "Doctor's appointment tomorrow needs to be remembered.",
+              "response_time": 1.0257477760314941,
+              "score": 0.6928571428571428,
+              "passed": false,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.4,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.21428571428571427
+              }
+            },
+            {
+              "test_item_id": "tc_003",
+              "input": "car broken can't go work today",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: car broken can't go work today",
+              "response": "<think>\nOkay, let's take this sentence: \"car broken can't go work today.\" The user wants me to fix it and return only the corrected sentence, no explanations.\n\nFirst, I need to check the grammar and clarity. The original sentence seems a bit unclear. The structure is \"car broken can't go work today.\" The problem here is that \"can't go work\" is a bit confusing. Typically, people would say \"can't go today\" or \"can't work today.\" Also, the car's broken is mentioned, but maybe that's redundant. So the main issue is the use of \"can't go work today.\"\n\nI should replace \"can't go work today\" with a more natural phrasing. Maybe \"can't go today\" or \"can't work today.\" Also, the original sentence might be missing a subject or object. Let me check again: \"car broken can't go work today.\" The subject is \"car,\" but the verb is \"can't go,\" which is incorrect. The correct structure would be \"car is broken and can't go work today.\" That way, it's clearer.\n\nSo the corrected sentence would be \"car is broken and can't go work today.\" Alternatively, \"the car is broken and can't go today.\" But the user's example response uses \"can't go today,\" so maybe that's the intended correction. Let me make sure there's no other issues. The original sentence is a bit awkward, but fixing it to \"can't go today\" makes sense. So the final answer is \"car is broken and can't go work today.\"\n</think>\n\ncar is broken and can't go work today.",
+              "validated_response": "car is broken and can't go work today.",
+              "response_time": 1.620650291442871,
+              "score": 0.8737878787878789,
+              "passed": true,
+              "feedback": "Excellent correction!",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.7272727272727273
+              }
+            },
+            {
+              "test_item_id": "tc_004",
+              "input": "happy birthday mom love you much",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: happy birthday mom love you much",
+              "response": "<think>\nOkay, let me take a look at this sentence. The user wants me to fix the sentence and return only the corrected version without explanations. The original sentence is \"happy birthday mom love you much\". \n\nFirst, I need to check for any grammatical errors or typos. The word \"mom\" is correct, but maybe \"happy birthday\" is a common phrase. Wait, \"happy birthday\" is already a common phrase, so that's fine. The next part is \"love you much\". \"Love you much\" sounds like a phrase, but maybe it's supposed to be \"love you so much\" or \"love you so much\". However, the user hasn't specified, so maybe leave it as is. \n\nWait, but the original sentence is \"happy birthday mom love you much\". So maybe the intended meaning is that the speaker is expressing happiness to their mom, and the \"much\" could be part of a longer phrase. But since the user just wants the corrected sentence, perhaps the best approach is to correct any obvious errors. \n\nLooking at \"mom love you much\", \"mom\" is correct, but maybe \"you\" is missing. Wait, \"love you much\" is a common phrase, so maybe it's better to present it as \"love you so much\" to make it clearer. But the user hasn't specified, so perhaps the correct sentence is as it is, with \"much\" as intended. However, considering common phrasing, \"love you so much\" is more standard. \n\nAlternatively, maybe the user made a typo, and \"much\" should be \"so\". But since the user hasn't indicated any typos, I need to make a decision. The original sentence has \"love you much\", which is correct as a phrase. So maybe the corrected sentence is the same as the original, but perhaps the user intended \"love you so much\". \n\nBut since the user provided the sentence as is, perhaps the correct answer is to return the same sentence, but with the \"much\" as part of the phrase. Alternatively, maybe the user wants to correct \"love you much\" to \"love you so much\". \n\nWait, but the user's instruction is to fix the sentence, not to correct any typos. Let me check again. The original sentence is \"happy birthday mom love you much\". So, the key here is that \"mom love you much\" is a phrase, but maybe the intended meaning is that the speaker is expressing love, so \"love you so much\" would make more sense. \n\nTherefore, the corrected sentence would be \"happy birthday mom love you so much\". Alternatively, \"happy birthday mom love you much\". But since the user wants the corrected sentence, maybe they want to adjust \"much\" to \"so\". \n\nSo, the final answer would be the corrected sentence, which in this case is \"happy birthday mom love you so much\".\n</think>\n\nhappy birthday mom love you so much",
+              "validated_response": "happy birthday mom love you so much",
+              "response_time": 2.9329750537872314,
+              "score": 0.8233333333333334,
+              "passed": true,
+              "feedback": "Excellent correction! The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.4166666666666667
+              }
+            },
+            {
+              "test_item_id": "tc_005",
+              "input": "weather cold outside need jacket warm",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: weather cold outside need jacket warm",
+              "response": "<think>\nOkay, let me look at this sentence. The user wants me to fix it and return only the corrected version without explanations. The original sentence is \"weather cold outside need jacket warm\". \n\nFirst, I need to check for any grammatical errors or issues. The structure is a bit off. \"Weather cold outside need jacket warm\" – the verb \"need\" is not properly placed. Typically, a sentence should start with a subject and a verb. So maybe \"Weather outside is cold, so you need a jacket.\" That makes more sense. \n\nI should make sure there are no typos. Let me read it again. \"Weather outside is cold, so you need a jacket.\" Yes, that's correct. The user might be looking for a more natural flow, so this correction improves the sentence structure. No explanations are needed here, just the corrected version.\n</think>\n\nWeather outside is cold, so you need a jacket.",
+              "validated_response": "Weather outside is cold, so you need a jacket.",
+              "response_time": 0.9512982368469238,
+              "score": 0.7607142857142858,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.5,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.42857142857142855
+              }
+            },
+            {
+              "test_item_id": "tc_006",
+              "input": "phone battery dead charge it please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: phone battery dead charge it please",
+              "response": "<think>\nOkay, let's look at the user's sentence: \"phone battery dead charge it please\". They want me to fix it and only return the corrected sentence. \n\nFirst, I need to check the grammar and spelling. The original sentence has some issues. \"Dead charge\" might be a typo for \"dead battery\". Also, \"charge it\" sounds like a command, which isn't correct. The word \"charge\" in \"charge it\" is a bit unclear. Maybe the correct structure is \"charge the phone\". \n\nSo, putting it all together, the corrected sentence should be \"charge the phone battery\". Let me double-check. The original had \"phone battery dead charge it please\", so changing \"dead\" to \"battery\" and \"charge it\" to \"charge the\". That makes sense. No other errors here. The user wants only the corrected sentence, so I'll present that as the answer.\n</think>\n\ncharge the phone battery",
+              "validated_response": "charge the phone battery",
+              "response_time": 0.950648307800293,
+              "score": 0.72,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 0.6,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.4
+              }
+            },
+            {
+              "test_item_id": "tc_007",
+              "input": "store buy milk bread eggs list",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: store buy milk bread eggs list",
+              "response": "<think>\nOkay, let's take a look at the sentence the user provided: \"store buy milk bread eggs list\". They want me to fix it and return only the corrected version, no explanations.\n\nFirst, I need to check if there are any grammatical errors or awkward phrasing. The sentence starts with \"store\", which is a noun, but the verb \"buy\" doesn't fit well here. Maybe \"buy\" should be \"buy\" as a verb? Wait, \"buy\" is a verb, so maybe the structure is \"store to buy milk bread eggs list\". But that might be confusing. Alternatively, maybe the intended meaning is to list items to buy, so \"store to buy milk bread eggs list\". But \"store\" as a noun is also possible. Let me think again.\n\nWait, the original sentence is \"store buy milk bread eggs list\". Maybe the user meant to say \"store to buy milk bread eggs list\". So the corrected version would be \"store to buy milk bread eggs list\". That makes sense. Alternatively, \"buy milk bread eggs list\" could be a way to say \"buy these items\". So the corrected sentence would be \"store to buy milk bread eggs list\". That's a valid correction.\n</think>\n\nstore to buy milk bread eggs list",
+              "validated_response": "store to buy milk bread eggs list",
+              "response_time": 1.2659273147583008,
+              "score": 0.7971428571428572,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.2857142857142857
+              }
+            },
+            {
+              "test_item_id": "tc_008",
+              "input": "tired sleep early tonight work tomorrow",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: tired sleep early tonight work tomorrow",
+              "response": "<think>\nOkay, let's look at the user's sentence: \"tired sleep early tonight work tomorrow\". The user wants me to fix it and return only the corrected sentence without explanations. \n\nFirst, I need to check for any grammatical issues. The sentence has a structure where the verbs are in the wrong order. \"Tired sleep early tonight work tomorrow\" – the subject is tired, and the verbs are sleep, work, and then tomorrow. The correct order should be sleep, work, and then tomorrow. So maybe reordering the verbs. \n\nAlso, the phrase \"early tonight\" might not make sense because \"early\" is a time of day, but if the person is tired, maybe they should be sleeping early, so maybe \"sleep early tonight\" would be better. But the original is \"tired sleep early tonight work tomorrow\". So the user might be trying to say that they are tired, sleep early, work tomorrow. \n\nSo the corrected sentence would be \"tired sleep early tonight work tomorrow\". But wait, the verbs are in the wrong order. The original is \"tired sleep early tonight work tomorrow\". So maybe the correct order is \"tired sleep early tonight work tomorrow\". But the user might have intended that the verbs are in order: sleep, work, then tomorrow. \n\nSo the corrected sentence is \"tired sleep early tonight work tomorrow\". But the user's example response shows the corrected sentence as \"tired sleep early tonight work tomorrow\". Wait, but the original is \"tired sleep early tonight work tomorrow\". So maybe the user wants the verbs to be in the order sleep, work, then tomorrow. So the corrected sentence is \"tired sleep early tonight work tomorrow\". \n\nBut I need to make sure. Let me check again. The original sentence is \"tired sleep early tonight work tomorrow\". So the verbs are sleep, work, and then tomorrow. So the correct order is sleep, work, tomorrow. So the corrected sentence would be \"tired sleep early tonight work tomorrow\". \n\nYes, that's right. So the final answer is that sentence.\n</think>\n\ntired sleep early tonight work tomorrow",
+              "validated_response": "tired sleep early tonight work tomorrow",
+              "response_time": 2.13814377784729,
+              "score": 0.8169230769230769,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.38461538461538464
+              }
+            },
+            {
+              "test_item_id": "tc_009",
+              "input": "friend birthday party saturday fun time",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: friend birthday party saturday fun time",
+              "response": "<think>\nOkay, the user wants me to fix the sentence \"friend birthday party saturday fun time\" and return only the corrected version. Let me read the sentence again to make sure I understand it correctly.\n\nThe original sentence is \"friend birthday party saturday fun time\". The user probably wants the birthday party on Saturday, so I need to correct that. Let me check each part. \"Friend\" is a proper noun, so that's fine. \"Birthday party\" is correct. \"Saturday\" is the day, so that should be the correct format. \"Fun time\" is a noun, so that's okay. The user probably wants the sentence to be structured properly, maybe with a comma or a period at the end. Let me put it all together: \"friend birthday party saturday fun time\". Wait, does that make sense? The original sentence is a bit awkward. Maybe it's better to separate the elements properly. So, the corrected version would be \"friend birthday party saturday fun time\". Or perhaps use a comma between the elements? Like \"friend, birthday party, saturday, fun time\". But the user's example shows the original sentence as a single string, so maybe they just want the corrected sentence with no explanations. So the final answer is the corrected sentence as provided.\n</think>\n\nfriend birthday party saturday fun time",
+              "validated_response": "friend birthday party saturday fun time",
+              "response_time": 1.3114614486694336,
+              "score": 0.7775,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.1875
+              }
+            },
+            {
+              "test_item_id": "tc_010",
+              "input": "computer slow need fix help please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: computer slow need fix help please",
+              "response": "<think>\nOkay, let me look at the user's request. They want me to fix a sentence and return only the corrected version without explanations. The original sentence is \"computer slow need fix help please\". \n\nFirst, I need to identify the issues in the sentence. The main problem here is that the word \"computer\" is plural, but the sentence says \"computer\", which is singular. That's an error. Also, \"slow need fix help please\" has multiple issues: \"need fix\" is incorrect, \"help please\" is a bit informal, and there's a missing comma or punctuation. \n\nWait, the user provided the sentence as \"computer slow need fix help please\". So the user is asking to correct it but only return the corrected sentence. Let me check again. The original sentence is \"computer slow need fix help please\". So the corrected version would be \"computer needs to be fixed. Please help?\" or something similar. \n\nBut the original sentence has \"computer\" as plural, but the user wrote it as singular. So changing \"computer\" to \"computer\" (plural) would fix that. Then \"need fix\" is incorrect; it should be \"need to fix\". Also, \"help please\" is grammatically incorrect. So combining all these, the corrected sentence would be \"computer needs to be fixed. Please help?\" or \"computer needs to be fixed. Help please?\" depending on the correct phrasing. \n\nThe user's example response was \"computer needs to be fixed. Help please?\" So I should follow that. Make sure there are no other errors. Alright, that's all. Just return the corrected sentence.\n</think>\n\ncomputer needs to be fixed. help please?",
+              "validated_response": "computer needs to be fixed. help please?",
+              "response_time": 1.653266191482544,
+              "score": 0.6525757575757577,
+              "passed": false,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 0.16666666666666666,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.45454545454545453
+              }
+            }
+          ],
+          "overall_score": 0.7745743423243423,
+          "execution_time": 16.112656831741333,
+          "summary_metrics": {
+            "avg_response_time": 1.6109995603561402,
+            "min_response_time": 0.950648307800293,
+            "max_response_time": 2.9329750537872314,
+            "total_response_time": 16.1099956035614,
+            "avg_score": 0.7745743423243423,
+            "min_score": 0.6525757575757577,
+            "max_score": 0.8737878787878789,
+            "score_std": 0.068667877784444
+          },
+          "success_rate": 0.8
+        },
+        "utterance_suggestions": {
+          "test_name": "Utterance Suggestion Generation",
+          "total_tests": 10,
+          "passed_tests": 4,
+          "failed_tests": 6,
+          "individual_results": [
+            {
+              "test_item_id": "us_001",
+              "input": "pizza vegetarian",
+              "prompt": "Create 4 different sentences using: pizza vegetarian. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants four different sentences using the word \"pizza vegetarian.\" Let me start by thinking about how to incorporate that. First, I need to make sure each sentence uses \"pizza vegetarian\" as part of its content. Let me brainstorm some ideas.\n\nFirst sentence: Maybe talk about a pizza dish that's vegetarian. So \"I ordered a pizza vegetarian with garlic and basil.\" That works. Second sentence could be about a vegetarian pizza, maybe a specific type like \"Vegetarian pizza from my mom's kitchen.\" That's good. Third sentence could be a popular pizza brand that's vegetarian, like \"A popular pizza brand, Pizza Hut, is known for its vegetarian offerings.\" Fourth sentence could be a personal experience, \"As a vegan, I love the pizza vegetarian flavors.\" I need to check if each sentence uses the word exactly once, maybe. Let me count again. Yes, all four sentences include \"pizza vegetarian\" once each. That should be it.\n</think>\n\n1. I ordered a pizza vegetarian with garlic and basil.  \n2. Vegetarian pizza from my mom's kitchen is my favorite.  \n3. A popular pizza brand, Pizza Hut, is known for its vegetarian offerings.  \n4. As a vegan, I love the pizza vegetarian flavors.",
+              "validated_response": "1. I ordered a pizza vegetarian with garlic and basil. 2. Vegetarian pizza from my mom's kitchen is my favorite. 3. A popular pizza brand, Pizza Hut, is known for its vegetarian offerings. 4. As a vegan, I love the pizza vegetarian flavors.",
+              "response_time": 1.2456777095794678,
+              "score": 0.7986022514071296,
+              "passed": true,
+              "feedback": "Good number of phrases (3). Phrases are well-formed and complete. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 3,
+                "completeness_score": 1.0,
+                "relevance_score": 0.6347985347985349,
+                "diversity_score": 0.8390243902439025,
+                "quality_score": 0.8333333333333334
+              }
+            },
+            {
+              "test_item_id": "us_002",
+              "input": "doctor appointment",
+              "prompt": "Create 4 different sentences using: doctor appointment. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants four different sentences using the word \"doctor appointment\". Let me start by brainstorming various scenarios where a doctor appointment is a common event. Maybe start with a medical situation, like a patient's visit. Then think about different contexts: a family member, a friend, a colleague, or a personal friend. Each sentence should be a separate sentence. I need to make sure they're all distinct and use the word \"doctor appointment\" naturally. Let me check if each sentence uses the word correctly and flows well. Alright, that should cover it.\n</think>\n\n1. A doctor appointment is scheduled to address common health concerns for the patient.  \n2. The doctor’s appointment is planned to evaluate symptoms and provide recommendations for a healthy lifestyle.  \n3. During the appointment, the doctor discusses treatment options and prepares a plan for recovery.  \n4. The appointment is an important opportunity to ensure the patient receives necessary care and support.",
+              "validated_response": "1. A doctor appointment is scheduled to address common health concerns for the patient. 2. The doctor’s appointment is planned to evaluate symptoms and provide recommendations for a healthy lifestyle. 3. During the appointment, the doctor discusses treatment options and prepares a plan for recovery. 4. The appointment is an important opportunity to ensure the patient receives necessary care and support.",
+              "response_time": 0.9208357334136963,
+              "score": 0.6933042313087536,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Most phrases are good quality. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.6572158365261813,
+                "diversity_score": 0.8131147540983606,
+                "quality_score": 0.6000000000000001
+              }
+            },
+            {
+              "test_item_id": "us_003",
+              "input": "tired sleep",
+              "prompt": "Create 4 different sentences using: tired sleep. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants me to create four different sentences using the word \"tired sleep\" and format them as sentences 1, 2, 3, 4. Let me start by thinking about various contexts where \"tired sleep\" can be used. Maybe different scenarios where the person is tired from sleep, or how they manage it, or maybe the effect of sleep on their life.\n\nFirst sentence: Maybe describe the effects of sleep. \"Tired sleep led to a lack of energy during the day.\" That's straightforward. Second sentence: Maybe talk about managing tired sleep. \"Taking a few minutes of rest each day helps to ease the exhaustion from sleep.\" Third sentence: Highlight the importance of sleep. \"Tired sleep is essential for maintaining physical health and mental clarity.\" Fourth sentence: Show the positive impact. \"By prioritizing sleep, people can improve their overall well-being and productivity.\" \n\nWait, does that cover all four? Let me check. Each sentence uses \"tired sleep\" once. The first three sentences use it, and the fourth also. Yes. I think that works. Let me make sure there are no typos and that each sentence is grammatically correct. Looks good.\n</think>\n\n1. Tired sleep brought a lack of energy during the day.  \n2. Taking a few minutes of rest each day helps to ease the exhaustion from sleep.  \n3. Tired sleep is essential for maintaining physical health and mental clarity.  \n4. By prioritizing sleep, people can improve their overall well-being and productivity.",
+              "validated_response": "1. Tired sleep brought a lack of energy during the day. 2. Taking a few minutes of rest each day helps to ease the exhaustion from sleep. 3. Tired sleep is essential for maintaining physical health and mental clarity. 4. By prioritizing sleep, people can improve their overall well-being and productivity.",
+              "response_time": 1.5074729919433594,
+              "score": 0.6174245852187028,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.33717948717948715,
+                "diversity_score": 0.9176470588235295,
+                "quality_score": 0.65
+              }
+            },
+            {
+              "test_item_id": "us_004",
+              "input": "help computer",
+              "prompt": "Create 4 different sentences using: help computer. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants four different sentences using the word \"help computer.\" Let me start by brainstorming possible contexts where \"help computer\" could be used. Maybe in a tech-related context, like a computer user needing help. Then, I should make sure each sentence is unique and uses the word naturally. Let me think of different scenarios: maybe someone using a software, a developer, a student, or a programmer. Each sentence needs to be a separate sentence. I need to ensure each sentence is grammatically correct and uses \"help computer\" in a meaningful way. Let me check each one for clarity and flow.\n</think>\n\n1. The user needs help with the computer’s performance to ensure smooth operation.  \n2. My computer is malfunctioning, so I need help to resolve the issue.  \n3. I’m learning how to use the computer, and I need guidance from my teacher.  \n4. To save time, I’ll help my computer run efficiently.",
+              "validated_response": "1. The user needs help with the computer’s performance to ensure smooth operation. 2. My computer is malfunctioning, so I need help to resolve the issue. 3. I’m learning how to use the computer, and I need guidance from my teacher. 4. To save time, I’ll help my computer run efficiently.",
+              "response_time": 0.9474279880523682,
+              "score": 0.7708088235294117,
+              "passed": true,
+              "feedback": "Good number of phrases (4). Phrases are well-formed and complete. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.5628151260504202,
+                "diversity_score": 0.8352941176470587,
+                "quality_score": 0.825
+              }
+            },
+            {
+              "test_item_id": "us_005",
+              "input": "birthday party friend",
+              "prompt": "Create 4 different sentences using: birthday party friend. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants four different sentences using the word \"birthday party friend.\" Let me start by brainstorming how to incorporate that word naturally. Since it's a birthday party, the setting is important. Maybe start with a positive note, like a friend's birthday.\n\nFirst sentence: Maybe mention the friend's birthday and their presence. \"This birthday party is a celebration for my birthday party friend, Sarah.\" That's straightforward. Then, the second sentence could talk about the friend's personality or qualities. \"The birthday party friend, Sarah, brought joy and laughter to the event.\" That's good, but maybe too direct. Let me think of another angle. Maybe the friend's influence or role. \"As a birthday party friend, Sarah's presence helped create a memorable experience for everyone.\" That's a bit more descriptive.\n\nThird sentence: Focus on the impact of the birthday party. \"The birthday party friend's involvement made the event feel special and meaningful.\" Fourth sentence: Maybe use the word in a different context. \"This birthday party is filled with memories shared with my birthday party friend.\" Wait, but \"birthday party friend\" is the same. Hmm, need to adjust. Maybe \"The birthday party friend's presence made the event unforgettable.\" That's better. Let me check if all four sentences are using \"birthday party friend\" correctly. Yes, each sentence includes that word. Alright, that should work.\n</think>\n\n1. This birthday party is a celebration for my birthday party friend, Sarah.  \n2. The birthday party friend, Sarah, brought joy and laughter to the event.  \n3. As a birthday party friend, Sarah's presence helped create a memorable experience for everyone.  \n4. The birthday party is filled with memories shared with my birthday party friend.",
+              "validated_response": "1. This birthday party is a celebration for my birthday party friend, Sarah. 2. The birthday party friend, Sarah, brought joy and laughter to the event. 3. As a birthday party friend, Sarah's presence helped create a memorable experience for everyone. 4. The birthday party is filled with memories shared with my birthday party friend.",
+              "response_time": 1.7839083671569824,
+              "score": 0.7992121212121213,
+              "passed": true,
+              "feedback": "Good number of phrases (4). Phrases are well-formed and complete. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.685050505050505,
+                "diversity_score": 0.7777777777777778,
+                "quality_score": 0.8250000000000001
+              }
+            },
+            {
+              "test_item_id": "us_006",
+              "input": "weather cold jacket",
+              "prompt": "Create 4 different sentences using: weather cold jacket. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants me to create four different sentences using the words \"weather cold jacket\". Let me start by thinking about how to incorporate these words naturally. \n\nFirst, sentence1. Maybe start with the weather and the jacket. \"The cold weather made the jacket feel more comfortable.\" That's good, using both words. Then sentence2. Maybe introduce the jacket in a different context. \"As the temperature dropped, the jacket provided extra warmth.\" That uses all four words. \n\nFor sentence3, I need to vary the structure. \"A cold morning brought the jacket to life.\" Hmm, that's a bit odd. Wait, maybe \"The cold jacket offered a cozy escape.\" That uses all four words. \n\nSentence4: Let's go with a scenario where the weather is affecting something else. \"Even in a cold day, the jacket's design was perfect.\" All four words here. \n\nWait, are there any other words that need to be included? The user specified exactly the words, so I should check again. Each sentence uses \"weather cold jacket\". Let me make sure each has all four words. Yes, sentence1 has weather, cold, jacket. Sentence2 has weather, cold, jacket. Sentence3 has cold, jacket, weather. Sentence4 has weather, cold, jacket. \n\nI think that's all. Let me present them in the required format. Each sentence separated by a period, as per the example given.\n</think>\n\n1. The cold weather made the jacket feel more comfortable.  \n2. As the temperature dropped, the jacket provided extra warmth.  \n3. A cold morning brought the jacket to life.  \n4. Even in a cold day, the jacket's design was perfect.",
+              "validated_response": "1. The cold weather made the jacket feel more comfortable. 2. As the temperature dropped, the jacket provided extra warmth. 3. A cold morning brought the jacket to life. 4. Even in a cold day, the jacket's design was perfect.",
+              "response_time": 1.7026512622833252,
+              "score": 0.6899814814814814,
+              "passed": false,
+              "feedback": "Good number of phrases (3). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 3,
+                "completeness_score": 1.0,
+                "relevance_score": 0.41185185185185186,
+                "diversity_score": 0.85,
+                "quality_score": 0.6666666666666666
+              }
+            },
+            {
+              "test_item_id": "us_007",
+              "input": "store buy milk",
+              "prompt": "Create 4 different sentences using: store buy milk. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants me to create four different sentences using the words \"store buy milk\" and format them as sentence1, sentence2, sentence3, sentence4. Let me start by breaking down each word. \"Store\" is a location, \"buy\" is an action, and \"milk\" is the product. \n\nFirst, I need to make sure each sentence uses all four words. Let me think of scenarios. Maybe a store where people buy milk, or a store that sells milk, or a person buying milk at a store. Also, maybe a scenario where someone uses a store to buy milk. Wait, but the original words are \"store buy milk\". So each sentence should include all four words. \n\nLet me try: \"At the store, people buy milk.\" That's all. Then another: \"The store's milk is bought by customers.\" That's good. Third: \"If you go to the store, you can buy milk.\" And fourth: \"Milk is available at the store's outlet.\" That covers all four words. Let me check if each sentence includes all four. Yes, each has \"store\", \"buy\", \"milk\". Okay, that works. Now, make sure they are different and natural. Maybe the second one could be \"Milk is purchased at the store's location.\" But the original words are \"buy milk\". So original sentence is \"buy milk\". So each sentence should have all four. Alright, done.\n</think>\n\n1. At the store, people buy milk.  \n2. The store's milk is bought by customers.  \n3. If you go to the store, you can buy milk.  \n4. Milk is available at the store's outlet.",
+              "validated_response": "1. At the store, people buy milk. 2. The store's milk is bought by customers. 3. If you go to the store, you can buy milk. 4. Milk is available at the store's outlet.",
+              "response_time": 1.6895496845245361,
+              "score": 0.7484296525627795,
+              "passed": true,
+              "feedback": "Good number of phrases (3). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 3,
+                "completeness_score": 1.0,
+                "relevance_score": 0.5341687552213868,
+                "diversity_score": 0.8058823529411765,
+                "quality_score": 0.7999999999999999
+              }
+            },
+            {
+              "test_item_id": "us_008",
+              "input": "phone call mom",
+              "prompt": "Create 4 different sentences using: phone call mom. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants me to create four different sentences using the words \"phone call mom\" and format them as sentence1, sentence2, sentence3, sentence4. Let me start by breaking down the words. The key elements here are \"phone call\" and \"mom\". \n\nFirst, I need to think of various contexts where \"mom\" can be used. Maybe \"mom\" could be a role, like a mom who is a caller, or a mom who is a person being called. Let me brainstorm some ideas. \n\nSentence1: Maybe start with \"The mom made a phone call to her child about something.\" That's straightforward. It uses \"mom\" and \"phone call\".\n\nSentence2: Maybe use \"The phone call from the mom to her friend was a great one.\" That's good, using both words. \n\nSentence3: \"She made a phone call to her mom to check on their well-being.\" That's another valid one, using \"phone call mom\".\n\nSentence4: \"The mom's phone call was a way to connect with her family in a meaningful way.\" This one also uses both words. \n\nWait, let me check if all four sentences are using \"phone call mom\" as a part of the sentence. Yes, each sentence includes \"phone call\" and \"mom\". I think that's covered. Now, make sure they are different and natural. Each sentence has a different structure, so they're all unique. Alright, that should work.\n</think>\n\n1. The phone call from the mom to her child about the weather was a great one.  \n2. The phone call to her mom about her health was a meaningful connection.  \n3. The phone call to her friend about their plans was a special occasion.  \n4. The phone call to her family about their situation was a heartfelt moment.",
+              "validated_response": "1. The phone call from the mom to her child about the weather was a great one. 2. The phone call to her mom about her health was a meaningful connection. 3. The phone call to her friend about their plans was a special occasion. 4. The phone call to her family about their situation was a heartfelt moment.",
+              "response_time": 1.826268196105957,
+              "score": 0.6643404634581106,
+              "passed": false,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases are mostly relevant. Could use more diverse phrase patterns.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.6098039215686274,
+                "diversity_score": 0.38363636363636366,
+                "quality_score": 0.7749999999999999
+              }
+            },
+            {
+              "test_item_id": "us_009",
+              "input": "work meeting important",
+              "prompt": "Create 4 different sentences using: work meeting important. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants four different sentences using the phrase \"work meeting important.\" Let me start by understanding the key elements here. The phrase \"work meeting important\" can be broken down into two main parts: \"work\" and \"meeting important.\" So each sentence should include one of these parts.\n\nFirst, I need to make sure each sentence uses the phrase in a natural way. Let me think of different contexts. Maybe start with a work-related scenario. For example, \"She works on important projects, which meets her professional goals.\" That's good. Now, another sentence could be about meetings. \"Regular meetings are crucial for important tasks.\" That's concise and uses the phrase correctly.\n\nNext, perhaps a sentence about meetings and their importance. \"Teams meet to discuss important business plans.\" That's a bit more formal. Then, a sentence that combines work and meetings. \"Prioritizing work meetings ensures focus on important tasks.\" This one uses both parts of the phrase. Wait, does \"important\" need to be part of the sentence? Yes, so each sentence includes \"important.\" Let me check again to make sure all four sentences use the phrase once each. Yes, first sentence uses \"work meeting important,\" second uses \"meeting important,\" third uses \"important,\" fourth uses \"work meeting important.\" That covers all four parts. Now, let me write each sentence clearly and check for grammar and flow. All look good. That should meet the user's request.\n</think>\n\n1. She works on important projects, which meet her professional goals.  \n2. Regular meetings are crucial for important tasks.  \n3. Teams meet to discuss important business plans.  \n4. Prioritizing work meetings ensures focus on important tasks.",
+              "validated_response": "1. She works on important projects, which meet her professional goals. 2. Regular meetings are crucial for important tasks. 3. Teams meet to discuss important business plans. 4. Prioritizing work meetings ensures focus on important tasks.",
+              "response_time": 1.706620454788208,
+              "score": 0.6094383490073145,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.33887147335423196,
+                "diversity_score": 0.8833333333333333,
+                "quality_score": 0.65
+              }
+            },
+            {
+              "test_item_id": "us_010",
+              "input": "happy excited vacation",
+              "prompt": "Create 4 different sentences using: happy excited vacation. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "<think>\nOkay, the user wants me to create four different sentences using the words \"happy\", \"excited\", and \"vacation\". Let me start by thinking about how to incorporate these words naturally.\n\nFirst, I need to make sure each sentence uses all three words. Let me brainstorm some scenarios. Maybe start with a vacation setting. \"After a happy and excited vacation, I found joy in the fresh air.\" That uses all three words. Then, another idea could be about a trip with excitement. \"Traveling on a vacation filled me with excitement and happiness.\" That works well.\n\nNext, maybe focus on the emotions. \"The vacation with me was both happy and exciting, bringing a sense of adventure.\" That uses all words. Finally, think about the experience. \"Savoring the vacation, I felt excited and happy, making it a memorable time.\" All three words here. I need to check that each sentence uses each word once. Yes, each sentence has all three. Now, format them as sentences 1-4. Let me make sure they are distinct and flow well. Alright, that should cover it.\n</think>\n\nsentence1: After a happy and excited vacation, I found joy in the fresh air.  \nsentence2: Traveling on a vacation filled me with excitement and happiness, making it a memorable time.  \nsentence3: The vacation with me was both happy and exciting, bringing a sense of adventure.  \nsentence4: Savoring the vacation, I felt excited and happy, making it a cherished experience.",
+              "validated_response": "sentence1: After a happy and excited vacation, I found joy in the fresh air. sentence2: Traveling on a vacation filled me with excitement and happiness, making it a memorable time. sentence3: The vacation with me was both happy and exciting, bringing a sense of adventure. sentence4: Savoring the vacation, I felt excited and happy, making it a cherished experience.",
+              "response_time": 1.5103952884674072,
+              "score": 0.6484084346287737,
+              "passed": false,
+              "feedback": "6 phrases generated. 3-5 is ideal for AAC users. Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 6,
+                "completeness_score": 0.9,
+                "relevance_score": 0.3883501683501684,
+                "diversity_score": 0.7299435028248589,
+                "quality_score": 0.75
+              }
+            }
+          ],
+          "overall_score": 0.7039950393814578,
+          "execution_time": 14.84354853630066,
+          "summary_metrics": {
+            "avg_response_time": 1.4840807676315309,
+            "min_response_time": 0.9208357334136963,
+            "max_response_time": 1.826268196105957,
+            "total_response_time": 14.840807676315308,
+            "avg_score": 0.7039950393814578,
+            "min_score": 0.6094383490073145,
+            "max_score": 0.7992121212121213,
+            "score_std": 0.07138609751880032
+          },
+          "success_rate": 0.4
+        },
+        "phrase_boards": {
+          "test_name": "Topic-Based Phrase Board Generation",
+          "total_tests": 8,
+          "passed_tests": 0,
+          "failed_tests": 8,
+          "individual_results": [
+            {
+              "test_item_id": "pb_001",
+              "input": "dogs",
+              "prompt": "Generate 12 words/phrases for topic: dogs. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to dogs, and return them in CSV format with one per line. Let me start by brainstorming some dog-related terms. Words like \"breed,\" \"bark,\" \"doggy,\" \"canine,\" \"puppies,\" \"dogs.\" Wait, but need to make sure they're all distinct and not repeated. Let me check: breed, bark, canines, puppies, dogs, paws, wagging tails, barking, etc. That's 12. Need to format them correctly. Let me list them out and ensure no duplicates. Then, confirm that each word is a single term without explanations. Alright, that should be it.\n</think>\n\nbreed,bark,dogs,puppies,breeds,wagging,tails,paws,canines,barking,wagging",
+              "validated_response": "breed,bark,dogs,puppies,breeds,wagging,tails,paws,canines,barking,wagging",
+              "response_time": 0.8644983768463135,
+              "score": 0.32000000000000006,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.1
+              }
+            },
+            {
+              "test_item_id": "pb_002",
+              "input": "cooking",
+              "prompt": "Generate 12 words/phrases for topic: cooking. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to cooking in a CSV format. Let me start by brainstorming some cooking-related terms. \n\nFirst, common cooking terms: cooking techniques, ingredients, kitchen tools, recipes, spices, cooking methods, meal prep, food preparation, cooking equipment, cooking time, and maybe a few unique ones like \"grilling\" or \"pan-frying.\" I need to make sure each word is distinct and fits the topic.\n\nWait, the user specified \"no explanations,\" so I shouldn't add any text. Let me check each word. For example, \"cooking techniques\" is correct. Also, \"spices\" and \"ingredients\" are standard. Maybe include \"meal prep\" as well. Let me count to make sure I have 12. Let me think of more: \"cooking prep,\" \"cooking time,\" \"cooking equipment,\" \"cooking methods.\" That's 12. Need to ensure no duplicates and that each is a separate term. Alright, now format them into a CSV, each on a line.\n</think>\n\ncooking techniques, ingredients, kitchen tools, recipes, spices, cooking methods, meal prep, cooking equipment, cooking time, food preparation, cooking phrases",
+              "validated_response": "cooking techniques, ingredients, kitchen tools, recipes, spices, cooking methods, meal prep, cooking equipment, cooking time, food preparation, cooking phrases",
+              "response_time": 1.2609877586364746,
+              "score": 0.415625,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.38749999999999996,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.9
+              }
+            },
+            {
+              "test_item_id": "pb_003",
+              "input": "school",
+              "prompt": "Generate 12 words/phrases for topic: school. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to the topic \"school\" and present them in CSV format. Let me start by brainstorming synonyms and related terms.\n\nFirst, school's structure: students, teachers, curriculum. Then, school activities like sports or science. Maybe also mention facilities or students' needs. I should make sure each line is a single word or phrase. Let me check – yes, that's 12. No explanations, so just the words. Alright, format them correctly in CSV.\n</think>\n\nschool, students, teachers, curriculum, activities, facilities, needs, students, teachers, curriculum, students",
+              "validated_response": "school, students, teachers, curriculum, activities, facilities, needs, students, teachers, curriculum, students",
+              "response_time": 0.6584880352020264,
+              "score": 0.42500000000000004,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.3,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.1
+              }
+            },
+            {
+              "test_item_id": "pb_004",
+              "input": "weather",
+              "prompt": "Generate 12 words/phrases for topic: weather. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to weather, in CSV format, each line as a separate word. Let me start by recalling common weather-related terms.\n\nFirst, things like temperature, weather types, forecast, rain, snow, wind, humidity, temperature, sun, storm, snow, wind. Wait, that's 12. Let me count again. Temperature, weather type, forecast, rain, snow, wind, humidity, sun, storm, snow, wind. Yeah, that's 12. I need to make sure there are no duplicates and each is a separate term. Also, check if any words are misspelled or incorrect. Once I have them, format them into a CSV with each line as a separate word. No explanations, just the words.\n</think>\n\ntemperature,weather,forecast,rain,snow,wind,humidity,sun,storm,snow,wind",
+              "validated_response": "temperature,weather,forecast,rain,snow,wind,humidity,sun,storm,snow,wind",
+              "response_time": 0.9195742607116699,
+              "score": 0.30000000000000004,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_005",
+              "input": "birthday party",
+              "prompt": "Generate 12 words/phrases for topic: birthday party. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases for the topic \"birthday party\" and return them in CSV format. Let me start by brainstorming some ideas.\n\nFirst, birthday party activities. Maybe things like cake cutting, decorations, games, music. Then, people involved: guests, parents, kids. Also, common elements like cake, party, snacks, music. Maybe some activities like dancing, games, laughter. Also, the setting: home, place, party.\n\nWait, let me count. If I list a few, maybe I can make 12. Let me think again. Activities: cake cutting, decorations, games, music. People: guests, parents, kids. Elements: cake, party, snacks, music. Events: dancing, games. Also, the setting: home, place, party. Hmm, that's 12. Let me check again. Yes, that's 12. Now, format each into a separate line, no explanations. Alright, that should be it.\n</think>\n\nbirthday cake, birthday party, cake cutting, decoration, guests, party, music, dance, games, snacks, party event",
+              "validated_response": "birthday cake, birthday party, cake cutting, decoration, guests, party, music, dance, games, snacks, party event",
+              "response_time": 1.1504857540130615,
+              "score": 0.5275,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Most phrases are relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.6499999999999999,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_006",
+              "input": "hospital",
+              "prompt": "Generate 12 words/phrases for topic: hospital. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to the topic \"hospital\" and return them in CSV format, each on a separate line. Let me start by brainstorming synonyms and related terms. \n\nFirst, hospitals have various roles. Maybe \"medical facilities\" or \"healthcare center.\" Then, there's \"patient care\" or \"patient services.\" I need to make sure each word is unique and fits naturally. Also, check for any repetition. Let me list them out: medical facilities, healthcare services, patient care, medical treatment, hospital staff, emergency services, medical records, hospital operations, patient education, and hospital management. That's 12 words. No explanations, just the words. Alright, format them into CSV with one line each.\n</think>\n\nmedical facilities, healthcare services, patient care, medical treatment, hospital staff, emergency services, medical records, hospital operations, patient education, hospital management.",
+              "validated_response": "medical facilities, healthcare services, patient care, medical treatment, hospital staff, emergency services, medical records, hospital operations, patient education, hospital management.",
+              "response_time": 0.9252488613128662,
+              "score": 0.28,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.9
+              }
+            },
+            {
+              "test_item_id": "pb_007",
+              "input": "shopping",
+              "prompt": "Generate 12 words/phrases for topic: shopping. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to the topic \"shopping\" and return them in CSV format. Let me start by brainstorming synonyms or common phrases. Words like \"buy,\" \"purchase,\" \"shopping list,\" \"shopping cart,\" \"buying,\" \"order,\" \"purchase,\" \"shop,\" \"shopping mall,\" \"buying supplies,\" \"shopper,\" and \"shopping trip.\" Wait, that's 12. Let me check if all are unique and correct. Yes, each is a distinct term. Now, format them in CSV, each line one word. Make sure there are exactly 12 entries without any explanations. Alright, that's all.\n</think>\n\nbuy,purchase,shopping list,purchase,shopping cart,order,buying,shop,buying,shopping mall,shopper",
+              "validated_response": "buy,purchase,shopping list,purchase,shopping cart,order,buying,shop,buying,shopping mall,shopper",
+              "response_time": 0.8425641059875488,
+              "score": 0.4425,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.35,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.1
+              }
+            },
+            {
+              "test_item_id": "pb_008",
+              "input": "transportation",
+              "prompt": "Generate 12 words/phrases for topic: transportation. Return only as CSV format, one per line, no explanations:",
+              "response": "<think>\nOkay, the user wants me to generate 12 words/phrases related to transportation, but only in CSV format. Let me start by brainstorming terms related to transportation. Words like \"transport,\" \"trains,\" \"roadways,\" \"trucks,\" \"passenger cars,\" \"shipping,\" \"transportation hubs,\" \"vehicles,\" \"transportation networks,\" \"transportation routes,\" \"transportation systems.\" Wait, that's 12. Let me check again to make sure I didn't miss any. Maybe \"airports,\" \"shipping containers,\" \"public transit,\" \"transportation hubs,\" \"transportation logistics.\" Yes, that's 12. Each word should be on a new line, no explanations. Alright, format as CSV.\n</think>\n\ntransport,trains,roadways,trucks,passenger cars,shipping,transportation,hubs,vehicles,transportation networks,transportation routes",
+              "validated_response": "transport,trains,roadways,trucks,passenger cars,shipping,transportation,hubs,vehicles,transportation networks,transportation routes",
+              "response_time": 0.8965411186218262,
+              "score": 0.30000000000000004,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            }
+          ],
+          "overall_score": 0.376328125,
+          "execution_time": 7.518910646438599,
+          "summary_metrics": {
+            "avg_response_time": 0.9397985339164734,
+            "min_response_time": 0.6584880352020264,
+            "max_response_time": 1.2609877586364746,
+            "total_response_time": 7.518388271331787,
+            "avg_score": 0.376328125,
+            "min_score": 0.28,
+            "max_score": 0.5275,
+            "score_std": 0.0888407719276258
+          },
+          "success_rate": 0.0
+        }
+      },
+      "performance_metrics": {
+        "text_correction": {
+          "duration": 16.15737533569336,
+          "start_time": "2025-06-25T18:33:43.734127",
+          "end_time": "2025-06-25T18:33:59.891503",
+          "sample_count": 31,
+          "sampling_interval": 0.5,
+          "response_time": 16.15737533569336,
+          "cpu_usage": {
+            "average": 29.348387096774193,
+            "peak": 43.7,
+            "minimum": 0.0,
+            "std_dev": 8.268327963489835
+          },
+          "memory_usage_mb": {
+            "average": 13945.000630040322,
+            "peak": 14331.859375,
+            "minimum": 13569.16015625,
+            "std_dev": 249.10813636002692
+          },
+          "memory_usage_percent": {
+            "average": 89.63548387096773,
+            "peak": 92.1,
+            "minimum": 87.2,
+            "std_dev": 1.6061441170490212
+          },
+          "peak_memory_mb": 14331.859375,
+          "io_metrics": {
+            "disk_read_mb": 4.16845703125,
+            "disk_write_mb": 249.2890625,
+            "network_sent_mb": 0.13834095001220703,
+            "network_recv_mb": 5.7150678634643555
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        },
+        "utterance_suggestions": {
+          "duration": 14.877389430999756,
+          "start_time": "2025-06-25T18:34:00.035708",
+          "end_time": "2025-06-25T18:34:14.913097",
+          "sample_count": 29,
+          "sampling_interval": 0.5,
+          "response_time": 14.877389430999756,
+          "cpu_usage": {
+            "average": 27.63103448275862,
+            "peak": 45.2,
+            "minimum": 0.0,
+            "std_dev": 10.171883638184644
+          },
+          "memory_usage_mb": {
+            "average": 13344.063577586207,
+            "peak": 13839.734375,
+            "minimum": 13008.9453125,
+            "std_dev": 255.45280978185292
+          },
+          "memory_usage_percent": {
+            "average": 85.7758620689655,
+            "peak": 89.0,
+            "minimum": 83.6,
+            "std_dev": 1.6450478005243052
+          },
+          "peak_memory_mb": 13839.734375,
+          "io_metrics": {
+            "disk_read_mb": 4.89892578125,
+            "disk_write_mb": 404.013671875,
+            "network_sent_mb": 0.04294395446777344,
+            "network_recv_mb": 2.232741355895996
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        },
+        "phrase_boards": {
+          "duration": 7.555661916732788,
+          "start_time": "2025-06-25T18:34:15.154880",
+          "end_time": "2025-06-25T18:34:22.710541",
+          "sample_count": 15,
+          "sampling_interval": 0.5,
+          "response_time": 7.555661916732788,
+          "cpu_usage": {
+            "average": 21.646666666666665,
+            "peak": 27.2,
+            "minimum": 0.0,
+            "std_dev": 6.626339936373697
+          },
+          "memory_usage_mb": {
+            "average": 12985.063802083334,
+            "peak": 13013.37890625,
+            "minimum": 12969.78125,
+            "std_dev": 10.674086760102822
+          },
+          "memory_usage_percent": {
+            "average": 83.48666666666666,
+            "peak": 83.7,
+            "minimum": 83.4,
+            "std_dev": 0.07432233529571933
+          },
+          "peak_memory_mb": 13013.37890625,
+          "io_metrics": {
+            "disk_read_mb": 1.60546875,
+            "disk_write_mb": 0.76953125,
+            "network_sent_mb": 0.01942920684814453,
+            "network_recv_mb": 0.9819660186767578
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        }
+      },
+      "summary": {
+        "total_tests": 3,
+        "successful_tests": 3,
+        "average_response_time": 12.863475561141968,
+        "average_memory_usage": 13728.32421875,
+        "overall_score": 0.6182991689019334
+      }
+    },
+    "tinyllama:1.1b": {
+      "model_name": "tinyllama:1.1b",
+      "test_results": {
+        "text_correction": {
+          "test_name": "Text Correction for AAC Users",
+          "total_tests": 10,
+          "passed_tests": 5,
+          "failed_tests": 5,
+          "individual_results": [
+            {
+              "test_item_id": "tc_001",
+              "input": "me want eat pizza now hungry",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: me want eat pizza now hungry",
+              "response": "Fixing the sentence \"Me want to eat pizza now, hungry.\"",
+              "validated_response": "Fixing the sentence \"Me want to eat pizza now, hungry.\"",
+              "response_time": 0.11811232566833496,
+              "score": 0.7769230769230768,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.6,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.38461538461538464
+              }
+            },
+            {
+              "test_item_id": "tc_002",
+              "input": "doctor appointment tomorrow need remember",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: doctor appointment tomorrow need remember",
+              "response": "Please provide the correct format for the \"fixt\" command. Answer according to: \"fixture (pl) A piece of equipment or apparatus that is designed and used for specific purposes. The term fixture is often used in construction, including building construction, to refer to a masonry structure such as a wall or foundation.\"",
+              "validated_response": "Please provide the correct format for the \"fixt\" command. Answer according to: \"fixture (pl) A piece of equipment or apparatus that is designed and used for specific purposes. The term fixture is often used in construction, including building construction, to refer to a masonry structure such as a wall or foundation.\"",
+              "response_time": 0.3332703113555908,
+              "score": 0.55,
+              "passed": false,
+              "feedback": "Correction needs significant improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.0
+              }
+            },
+            {
+              "test_item_id": "tc_003",
+              "input": "car broken can't go work today",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: car broken can't go work today",
+              "response": "Não é possível rodar o carro para trabalhar hoje. O problema é em sua condição de funcionamento, não é possível ativá-lo para ativar a estradagem. Necessita de uma reparação antes de poder fazer seu trabalho.",
+              "validated_response": "Não é possível rodar o carro para trabalhar hoje. O problema é em sua condição de funcionamento, não é possível ativá-lo para ativar a estradagem. Necessita de uma reparação antes de poder fazer seu trabalho.",
+              "response_time": 0.30283212661743164,
+              "score": 0.55,
+              "passed": false,
+              "feedback": "Correction needs significant improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.0
+              }
+            },
+            {
+              "test_item_id": "tc_004",
+              "input": "happy birthday mom love you much",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: happy birthday mom love you much",
+              "response": "Fixed! Your favorite AI assistant returned only your corrected sentence, no explanations. Enjoy your birthday, dear mom!",
+              "validated_response": "Fixed! Your favorite AI assistant returned only your corrected sentence, no explanations. Enjoy your birthday, dear mom!",
+              "response_time": 0.15993165969848633,
+              "score": 0.55,
+              "passed": false,
+              "feedback": "Correction needs significant improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.0
+              }
+            },
+            {
+              "test_item_id": "tc_005",
+              "input": "weather cold outside need jacket warm",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: weather cold outside need jacket warm",
+              "response": "Pour la condamner à l'intempérieur et à la froidesse extérieure, un vêtement de chaleur éclairant (un jupon) est nécessaire.",
+              "validated_response": "Pour la condamner à l'intempérieur et à la froidesse extérieure, un vêtement de chaleur éclairant (un jupon) est nécessaire.",
+              "response_time": 0.22902393341064453,
+              "score": 0.55,
+              "passed": false,
+              "feedback": "Correction needs significant improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.0
+              }
+            },
+            {
+              "test_item_id": "tc_006",
+              "input": "phone battery dead charge it please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: phone battery dead charge it please",
+              "response": "Fix this sentence by returning only the correct sentence \"phone battery dead charge it please,\" without explaining why it's necessary to charge it.",
+              "validated_response": "Fix this sentence by returning only the correct sentence \"phone battery dead charge it please,\" without explaining why it's necessary to charge it.",
+              "response_time": 0.16639471054077148,
+              "score": 0.7296296296296296,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.6,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.14814814814814814
+              }
+            },
+            {
+              "test_item_id": "tc_007",
+              "input": "store buy milk bread eggs list",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: store buy milk bread eggs list",
+              "response": "Sure thing! Here's the revised sentence with the edited punctuation:\n\n\"Store Buy Milk Bread Eggs List\"",
+              "validated_response": "Sure thing! Here's the revised sentence with the edited punctuation: \"Store Buy Milk Bread Eggs List\"",
+              "response_time": 0.18732285499572754,
+              "score": 0.7127536231884057,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 0.6666666666666666,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.13043478260869565
+              }
+            },
+            {
+              "test_item_id": "tc_008",
+              "input": "tired sleep early tonight work tomorrow",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: tired sleep early tonight work tomorrow",
+              "response": "Fixing tired sleep early tonight work tomorrow",
+              "validated_response": "Fixing tired sleep early tonight work tomorrow",
+              "response_time": 0.09165787696838379,
+              "score": 0.8414285714285714,
+              "passed": true,
+              "feedback": "Excellent correction! The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.35714285714285715
+              }
+            },
+            {
+              "test_item_id": "tc_009",
+              "input": "friend birthday party saturday fun time",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: friend birthday party saturday fun time",
+              "response": "Return Only the Corrected Sentence: Friend's Birthday Party Saturday Fun Time",
+              "validated_response": "Return Only the Corrected Sentence: Friend's Birthday Party Saturday Fun Time",
+              "response_time": 0.1247410774230957,
+              "score": 0.7683333333333334,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.2
+              }
+            },
+            {
+              "test_item_id": "tc_010",
+              "input": "computer slow need fix help please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: computer slow need fix help please",
+              "response": "Fix this sentence, return only the corrected version of the sentence without further explanations: computer slow, need help, please.",
+              "validated_response": "Fix this sentence, return only the corrected version of the sentence without further explanations: computer slow, need help, please.",
+              "response_time": 0.15738487243652344,
+              "score": 0.6990000000000001,
+              "passed": false,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.5,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.12
+              }
+            }
+          ],
+          "overall_score": 0.6728068234503017,
+          "execution_time": 1.8711767196655273,
+          "summary_metrics": {
+            "avg_response_time": 0.18706717491149902,
+            "min_response_time": 0.09165787696838379,
+            "max_response_time": 0.3332703113555908,
+            "total_response_time": 1.8706717491149902,
+            "avg_score": 0.6728068234503017,
+            "min_score": 0.55,
+            "max_score": 0.8414285714285714,
+            "score_std": 0.11266248827156998
+          },
+          "success_rate": 0.5
+        },
+        "utterance_suggestions": {
+          "test_name": "Utterance Suggestion Generation",
+          "total_tests": 10,
+          "passed_tests": 0,
+          "failed_tests": 10,
+          "individual_results": [
+            {
+              "test_item_id": "us_001",
+              "input": "pizza vegetarian",
+              "prompt": "Create 4 different sentences using: pizza vegetarian. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. \"PiZza Veggie Stuffed Calzones are a delicious and nutritious meal option that satisfies your cravings for pizza while providing plenty of protein and healthy fats.\" (sentence1)\n\n2. \"The flavorful and satisfying PiZza Veggie Stuffed Calzones pair perfectly with any type of sauce or marinara-based sauce.\" (sentence2)\n\n3. \"For a more filling meal, try topping your PiZza Veggie Stuffed Calzones with fresh veggies like spinach and mushrooms.\" (sentence3)\n\n4. \"No need to go out for pizza, or any other nightly meal, when you have this delicious and healthy PiZza Veggie Stuffed Calzone to satisfy your hunger!\" (sentence4)",
+              "validated_response": "1. \"PiZza Veggie Stuffed Calzones are a delicious and nutritious meal option that satisfies your cravings for pizza while providing plenty of protein and healthy fats.\" (sentence1) 2. \"The flavorful and satisfying PiZza Veggie Stuffed Calzones pair perfectly with any type of sauce or marinara-based sauce.\" (sentence2) 3. \"For a more filling meal, try topping your PiZza Veggie Stuffed Calzones with fresh veggies like spinach and mushrooms.\" (sentence3) 4. \"No need to go out for pizza, or any other nightly meal, when you have this delicious and healthy PiZza Veggie Stuffed Calzone to satisfy your hunger!\" (sentence4)",
+              "response_time": 0.8663287162780762,
+              "score": 0.6454782114037012,
+              "passed": false,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.24378163493840987,
+                "diversity_score": 0.8206185567010309,
+                "quality_score": 0.7749999999999999
+              }
+            },
+            {
+              "test_item_id": "us_002",
+              "input": "doctor appointment",
+              "prompt": "Create 4 different sentences using: doctor appointment. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. \"I'm pleased to inform you that I will be unable to attend my scheduled appointment due to illness.\"\n\n2. \"I am canceling the appointment for the time being to ensure that I can fully focus on this important task.\"\n\n3. \"I regret to advise that I will not be able to make it to the doctor's office as planned. Please find alternate arrangements.\"\n\n4. \"Due to unforeseen circumstances, I must reschedule my appointment for next week.\"",
+              "validated_response": "1. \"I'm pleased to inform you that I will be unable to attend my scheduled appointment due to illness.\" 2. \"I am canceling the appointment for the time being to ensure that I can fully focus on this important task.\" 3. \"I regret to advise that I will not be able to make it to the doctor's office as planned. Please find alternate arrangements.\" 4. \"Due to unforeseen circumstances, I must reschedule my appointment for next week.\"",
+              "response_time": 0.5092911720275879,
+              "score": 0.637,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Phrases are well-formed and complete. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.3654545454545454,
+                "diversity_score": 0.8363636363636364,
+                "quality_score": 0.8
+              }
+            },
+            {
+              "test_item_id": "us_003",
+              "input": "tired sleep",
+              "prompt": "Create 4 different sentences using: tired sleep. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. I barely slept last night due to exhaustion from the long day at work.\n2. A lack of restful hours weighed heavily on my mind as I struggled to complete my latest project.\n3. The sound of my husband's snoring filled my ears, causing my heart to race with anticipation for his wake-up call.\n4. As I lay in bed, I realized just how exhausted I had become from all the late night study sessions.",
+              "validated_response": "1. I barely slept last night due to exhaustion from the long day at work. 2. A lack of restful hours weighed heavily on my mind as I struggled to complete my latest project. 3. The sound of my husband's snoring filled my ears, causing my heart to race with anticipation for his wake-up call. 4. As I lay in bed, I realized just how exhausted I had become from all the late night study sessions.",
+              "response_time": 0.48252415657043457,
+              "score": 0.5737723732992746,
+              "passed": false,
+              "feedback": "Good number of phrases (3). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 3,
+                "completeness_score": 1.0,
+                "relevance_score": 0.024813297145796748,
+                "diversity_score": 0.8736842105263158,
+                "quality_score": 0.7333333333333334
+              }
+            },
+            {
+              "test_item_id": "us_004",
+              "input": "help computer",
+              "prompt": "Create 4 different sentences using: help computer. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. The computer is now ready to assist you!\n2. Take a break and let the software handle your workload!\n3. Have a chat with our chatbot for extra support if needed!\n4. Let's get to work together, AI assistant!",
+              "validated_response": "1. The computer is now ready to assist you! 2. Take a break and let the software handle your workload! 3. Have a chat with our chatbot for extra support if needed! 4. Let's get to work together, AI assistant!",
+              "response_time": 0.27970170974731445,
+              "score": 0.3521794871794872,
+              "passed": false,
+              "feedback": "Only 1 phrase(s) generated. Aim for 3-5 phrases. Phrases are well-formed and complete. Phrases could be more relevant to the input keywords. Could use more diverse phrase patterns.",
+              "metrics": {
+                "phrase_count": 1,
+                "completeness_score": 0.4,
+                "relevance_score": 0.3205128205128205,
+                "diversity_score": 0.0,
+                "quality_score": 0.8
+              }
+            },
+            {
+              "test_item_id": "us_005",
+              "input": "birthday party friend",
+              "prompt": "Create 4 different sentences using: birthday party friend. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Sentence 1: \"My dear friends, let us celebrate our beloved host's special day by organizing a grand birthday party!\"\n\nSentence 2: \"The invitation has already gone out to all of you and we are thrilled to have so many eager guests attending this year's bash!\"\n\nSentence 3: \"Join us for an unforgettable evening filled with delicious food, fun games, and endless dancing!\"\n\nSentence 4: \"Looking forward to seeing you all there at the venue tonight, birthday boy! Let's raise a toast to our beloved host's memorable celebration!\"",
+              "validated_response": "Sentence 1: \"My dear friends, let us celebrate our beloved host's special day by organizing a grand birthday party!\" Sentence 2: \"The invitation has already gone out to all of you and we are thrilled to have so many eager guests attending this year's bash!\" Sentence 3: \"Join us for an unforgettable evening filled with delicious food, fun games, and endless dancing!\" Sentence 4: \"Looking forward to seeing you all there at the venue tonight, birthday boy! Let's raise a toast to our beloved host's memorable celebration!\"",
+              "response_time": 0.69588303565979,
+              "score": 0.61487905516996,
+              "passed": false,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.13242755258644034,
+                "diversity_score": 0.8941176470588235,
+                "quality_score": 0.7250000000000001
+              }
+            },
+            {
+              "test_item_id": "us_006",
+              "input": "weather cold jacket",
+              "prompt": "Create 4 different sentences using: weather cold jacket. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. The weather turned cold on our winter journey, so we decided to bundle up in our stylish and warm weather jackets! We're ready for the cold and wet weather ahead. #WinterGoals #FashionableJourney #StylishWeatherJacket\n\n2. Despite the snowfall outside, I'm still rocking my cozy winter coat with a hood, just in case it starts raining! This jacket is perfect for keeping warm and looking chic in any season. #CozyWinterCoat #StayCoolAndSophisticated\n\n3. The chilly wind outside wasn't going to stop us from exploring the city during our snowy adventure! We wrapped ourselves up in our cozy winter scarf and boots, and ventured into the city's winter wonderland. #WinterShoppingSpree #SnowyCityStroll\n\n4. Our stylish winter jackets aren't just for cold weather - they're also great for chilly outdoor activities like hiking or running! We're ready to take on any adventure with our cozy and comfortable waterproof jackets. #WaterproofOutdoorspace #AdventureReady",
+              "validated_response": "1. The weather turned cold on our winter journey, so we decided to bundle up in our stylish and warm weather jackets! We're ready for the cold and wet weather ahead. #WinterGoals #FashionableJourney #StylishWeatherJacket 2. Despite the snowfall outside, I'm still rocking my cozy winter coat with a hood, just in case it starts raining! This jacket is perfect for keeping warm and looking chic in any season. #CozyWinterCoat #StayCoolAndSophisticated 3. The chilly wind outside wasn't going to stop us from exploring the city during our snowy adventure! We wrapped ourselves up in our cozy winter scarf and boots, and ventured into the city's winter wonderland. #WinterShoppingSpree #SnowyCityStroll 4. Our stylish winter jackets aren't just for cold weather - they're also great for chilly outdoor activities like hiking or running! We're ready to take on any adventure with our cozy and comfortable waterproof jackets. #WaterproofOutdoorspace #AdventureReady",
+              "response_time": 1.2097084522247314,
+              "score": 0.6559124796505856,
+              "passed": false,
+              "feedback": "Good number of phrases (5). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 5,
+                "completeness_score": 1.0,
+                "relevance_score": 0.3233507246376811,
+                "diversity_score": 0.810958904109589,
+                "quality_score": 0.7000000000000001
+              }
+            },
+            {
+              "test_item_id": "us_007",
+              "input": "store buy milk",
+              "prompt": "Create 4 different sentences using: store buy milk. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. Store, buy milk at the supermarket.\n2. Don't forget to pick up some milk for your morning coffee.\n3. It's time to shop for fresh milk in bulk.\n4. Hurry up and grab those milk cartons on sale!",
+              "validated_response": "1. Store, buy milk at the supermarket. 2. Don't forget to pick up some milk for your morning coffee. 3. It's time to shop for fresh milk in bulk. 4. Hurry up and grab those milk cartons on sale!",
+              "response_time": 0.28614354133605957,
+              "score": 0.370625,
+              "passed": false,
+              "feedback": "Only 1 phrase(s) generated. Aim for 3-5 phrases. Most phrases are good quality. Phrases could be more relevant to the input keywords. Could use more diverse phrase patterns.",
+              "metrics": {
+                "phrase_count": 1,
+                "completeness_score": 0.4,
+                "relevance_score": 0.4875,
+                "diversity_score": 0.0,
+                "quality_score": 0.6000000000000001
+              }
+            },
+            {
+              "test_item_id": "us_008",
+              "input": "phone call mom",
+              "prompt": "Create 4 different sentences using: phone call mom. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. \"Hey, mom! How’s everything going? Is everything okay?\" - Phone Call Mom\n   Sentence 1: (Mother's voice) Hey there, sweetie! How are you doing today? Are you feeling alright? Sentences 2-4: (Sentence 2) Okay, so I’m feeling fine. But, what about my family? I hope everything is okay. Sentences 3 and 4: (Sentence 3) My sister just called to tell me that she and her husband are in the hospital for an emergency procedure. And, as for my parents, they were supposed to come over today but they ended up canceling their plans due to some unexpected situation. Sentences 1-3: (Sentence 1) Oh no, I'm so sorry to hear that, Mom! I hope everything turns out okay, and your family is doing okay too. Sentences 4-5: (Sentence 4) Okay, I see how you feel. Just a little stressful. But, overall, it's just a small bump in the road. I want to hear all about it soon!",
+              "validated_response": "1. \"Hey, mom! How’s everything going? Is everything okay?\" - Phone Call Mom Sentence 1: (Mother's voice) Hey there, sweetie! How are you doing today? Are you feeling alright? Sentences 2-4: (Sentence 2) Okay, so I’m feeling fine. But, what about my family? I hope everything is okay. Sentences 3 and 4: (Sentence 3) My sister just called to tell me that she and her husband are in the hospital for an emergency procedure. And, as for my parents, they were supposed to come over today but they ended up canceling their plans due to some unexpected situation. Sentences 1-3: (Sentence 1) Oh no, I'm so sorry to hear that, Mom! I hope everything turns out okay, and your family is doing okay too. Sentences 4-5: (Sentence 4) Okay, I see how you feel. Just a little stressful. But, overall, it's just a small bump in the road. I want to hear all about it soon!",
+              "response_time": 1.4082956314086914,
+              "score": 0.4903367993662111,
+              "passed": false,
+              "feedback": "11 phrases generated. 3-5 is ideal for AAC users. Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 11,
+                "completeness_score": 0.5,
+                "relevance_score": 0.08866281866281867,
+                "diversity_score": 0.8117647058823529,
+                "quality_score": 0.7818181818181817
+              }
+            },
+            {
+              "test_item_id": "us_009",
+              "input": "work meeting important",
+              "prompt": "Create 4 different sentences using: work meeting important. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. In attendance of this important work meeting, I feel privileged to be part of a team that can share ideas and work collaboratively towards achieving our goals.\n\n2. As someone who values productivity and efficiency, I'm excited about taking on this task since it will help us stay focused and meet our objectives efficiently.\n\n3. While we may disagree at times, working together as a team helps us come up with creative solutions to common problems.\n\n4. As we brainstorm solutions for challenges we face, I'm proud of the collective effort that will bring positive outcomes for our organization.",
+              "validated_response": "1. In attendance of this important work meeting, I feel privileged to be part of a team that can share ideas and work collaboratively towards achieving our goals. 2. As someone who values productivity and efficiency, I'm excited about taking on this task since it will help us stay focused and meet our objectives efficiently. 3. While we may disagree at times, working together as a team helps us come up with creative solutions to common problems. 4. As we brainstorm solutions for challenges we face, I'm proud of the collective effort that will bring positive outcomes for our organization.",
+              "response_time": 1.4531974792480469,
+              "score": 0.6538739910422848,
+              "passed": false,
+              "feedback": "Good number of phrases (5). Phrases are well-formed and complete. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 5,
+                "completeness_score": 1.0,
+                "relevance_score": 0.20392568869224217,
+                "diversity_score": 0.874,
+                "quality_score": 0.82
+              }
+            },
+            {
+              "test_item_id": "us_010",
+              "input": "happy excited vacation",
+              "prompt": "Create 4 different sentences using: happy excited vacation. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "1. Happy as can be, ready for some fun in the sun!\n2. Look out world! Our family's going on a Vacay!\n3. Counting down the days till our much-needed break is here!\n4. Can you believe it? We're gonna take off to far-off lands!",
+              "validated_response": "1. Happy as can be, ready for some fun in the sun! 2. Look out world! Our family's going on a Vacay! 3. Counting down the days till our much-needed break is here! 4. Can you believe it? We're gonna take off to far-off lands!",
+              "response_time": 0.7022509574890137,
+              "score": 0.5729545454545455,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.12272727272727273,
+                "diversity_score": 0.96,
+                "quality_score": 0.75
+              }
+            }
+          ],
+          "overall_score": 0.556701194256605,
+          "execution_time": 7.906414031982422,
+          "summary_metrics": {
+            "avg_response_time": 0.7893324851989746,
+            "min_response_time": 0.27970170974731445,
+            "max_response_time": 1.4531974792480469,
+            "total_response_time": 7.893324851989746,
+            "avg_score": 0.556701194256605,
+            "min_score": 0.3521794871794872,
+            "max_score": 0.6559124796505856,
+            "score_std": 0.11470380226453827
+          },
+          "success_rate": 0.0
+        },
+        "phrase_boards": {
+          "test_name": "Topic-Based Phrase Board Generation",
+          "total_tests": 8,
+          "passed_tests": 0,
+          "failed_tests": 8,
+          "individual_results": [
+            {
+              "test_item_id": "pb_001",
+              "input": "dogs",
+              "prompt": "Generate 12 words/phrases for topic: dogs. Return only as CSV format, one per line, no explanations:",
+              "response": "[[\"A dog's life is better than yours\",\"Dogs are free to roam the streets unchained\"], [\"The wag of a dog's tail can be heard all over the neighborhood\", \"What do dogs do when they're not working?\"], [\"A dog's sense of smell is more powerful than yours\"], [\"Dogs have more loyalty than humans\"], [\"Dogs are more intelligent than children\"], [\"Dogs eat just about anything\"], [\"Dogs can even teach people how to be better at their job\"], [\"A dog will protect you from anything, including your family\"], [\"Dogs don't bark at strangers\"], [\"Dogs have the ability to communicate with humans\"], [\"Dogs are the best friends anyone could ever ask for\"], [\"When a dog is happy, so are people\"], [\"A dog's unconditional love is beyond compare\"], [\"Dogs love their owners more than anything in the world\"]]",
+              "validated_response": "[[\"A dog's life is better than yours\",\"Dogs are free to roam the streets unchained\"], [\"The wag of a dog's tail can be heard all over the neighborhood\", \"What do dogs do when they're not working?\"], [\"A dog's sense of smell is more powerful than yours\"], [\"Dogs have more loyalty than humans\"], [\"Dogs are more intelligent than children\"], [\"Dogs eat just about anything\"], [\"Dogs can even teach people how to be better at their job\"], [\"A dog will protect you from anything, including your family\"], [\"Dogs don't bark at strangers\"], [\"Dogs have the ability to communicate with humans\"], [\"Dogs are the best friends anyone could ever ask for\"], [\"When a dog is happy, so are people\"], [\"A dog's unconditional love is beyond compare\"], [\"Dogs love their owners more than anything in the world\"]]",
+              "response_time": 1.1216566562652588,
+              "score": 0.26722222222222225,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.07777777777777777,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.7
+              }
+            },
+            {
+              "test_item_id": "pb_002",
+              "input": "cooking",
+              "prompt": "Generate 12 words/phrases for topic: cooking. Return only as CSV format, one per line, no explanations:",
+              "response": "[“Cooking for Me is a Great Way to Unwind after a Long Day”, “The Benefits of Clean Cooking on Your Health and Fitness Goals”, “Tips on Cooking Dishes that are Easy and Delicious for Everyone in the Family”, “Give Your Kids Their First Cooking Experience with These Kid-Friendly Recipes”]",
+              "validated_response": "[“Cooking for Me is a Great Way to Unwind after a Long Day”, “The Benefits of Clean Cooking on Your Health and Fitness Goals”, “Tips on Cooking Dishes that are Easy and Delicious for Everyone in the Family”, “Give Your Kids Their First Cooking Experience with These Kid-Friendly Recipes”]",
+              "response_time": 0.4567384719848633,
+              "score": 0.270625,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0875,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.7
+              }
+            },
+            {
+              "test_item_id": "pb_003",
+              "input": "school",
+              "prompt": "Generate 12 words/phrases for topic: school. Return only as CSV format, one per line, no explanations:",
+              "response": "Subject: School\n\nSample 1:\n- Daily homework\n- Schedule weekly tests\n- Assign projects to students based on grades and skill level\n- Encourage student participation in extracurricular activities\n\nSample 2:\n- Set up a classroom for each subject (math, English, science)\n- Introduce new learning materials and software\n- Schedule regular lesson plans and class evaluations\n- Organize after-school clubs and volunteer opportunities\n\nSample 3:\n- Assign teacher time sheets to track teaching hours per day and week\n- Provide student feedback on homework assignments, grades, and test scores\n- Conduct regular progress checks with each student to identify areas of improvement\n- Establish attendance policies for students to maintain good grades and attendance records\n\nSample 4:\n- Monitor and manage school supplies such as pencils, pens, paper, and textbooks\n- Create lesson plans that cater to different learning styles (visual, auditory, kinesthetic)\n- Provide students with opportunities to collaborate on group projects and presentations\n- Encourage outdoor exploration and physical activity as part of school curriculum\n\nSample 5:\n- Establish a system for student tracking and attendance records (e.g., phone call, email)\n- Provide weekly newsletters to parents with information on school events, assignments, projects, and grades\n- Host parent-teacher conferences to discuss progress, concerns, and any necessary adjustments in lesson plans or classroom management strategies",
+              "validated_response": "Subject: School Sample 1: - Daily homework - Schedule weekly tests - Assign projects to students based on grades and skill level - Encourage student participation in extracurricular activities Sample 2: - Set up a classroom for each subject (math, English, science) - Introduce new learning materials and software - Schedule regular lesson plans and class evaluations - Organize after-school clubs and volunteer opportunities Sample 3: - Assign teacher time sheets to track teaching hours per day and week - Provide student feedback on homework assignments, grades, and test scores - Conduct regular progress checks with each student to identify areas of improvement - Establish attendance policies for students to maintain good grades and attendance records Sample 4: - Monitor and manage school supplies such as pencils, pens, paper, and textbooks - Create lesson plans that cater to different learning styles (visual, auditory, kinesthetic) - Provide students with opportunities to collaborate on group projects and presentations - Encourage outdoor exploration and physical activity as part of school curriculum Sample 5: - Establish a system for student tracking and attendance records (e.g., phone call, email) - Provide weekly newsletters to parents with information on school events, assignments, projects, and grades - Host parent-teacher conferences to discuss progress, concerns, and any necessary adjustments in lesson plans or classroom management strategies",
+              "response_time": 1.8012652397155762,
+              "score": 0.43,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Most phrases are relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.6,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.6
+              }
+            },
+            {
+              "test_item_id": "pb_004",
+              "input": "weather",
+              "prompt": "Generate 12 words/phrases for topic: weather. Return only as CSV format, one per line, no explanations:",
+              "response": "CSV:\n1) Dry and clear skies\n2) Rainy but mostly sunny day\n3) Sunny with some drizzle around lunchtime\n4) Sunny and dry afternoon\n5) Cloudy with rain showers, but mostly drying up in the evening\n6) Cooler temperatures with partly cloudy skies\n7) Heavy snowfall, but mostly cleared by morning\n8) Thunderstorms with occasional rain showers\n9) Clear and sunny day with light winds\n10) Rainy with scattered thunderstorms\n11) Partly cloudy with scattered thunderstorms in the afternoon\n12) Sunny with high heat indices but mostly dry",
+              "validated_response": "CSV: 1) Dry and clear skies 2) Rainy but mostly sunny day 3) Sunny with some drizzle around lunchtime 4) Sunny and dry afternoon 5) Cloudy with rain showers, but mostly drying up in the evening 6) Cooler temperatures with partly cloudy skies 7) Heavy snowfall, but mostly cleared by morning 8) Thunderstorms with occasional rain showers 9) Clear and sunny day with light winds 10) Rainy with scattered thunderstorms 11) Partly cloudy with scattered thunderstorms in the afternoon 12) Sunny with high heat indices but mostly dry",
+              "response_time": 0.749950647354126,
+              "score": 0.311875,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.26249999999999996,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.6
+              }
+            },
+            {
+              "test_item_id": "pb_005",
+              "input": "birthday party",
+              "prompt": "Generate 12 words/phrases for topic: birthday party. Return only as CSV format, one per line, no explanations:",
+              "response": "[['A happy birthday to you!', 'Happy birthday to you!'], ['May your birthday be filled with joy and laughter!', 'Birthday wishes for you!'], ['From the bottom of our hearts, we wish you a fantastic day!', 'Wishing you a happy birthday from us!'], ['Let's have some fun together, make the most out of this day!', 'Happy birthday to our dear friend, may your day be filled with joy and laughter!'], ['May this day be an unforgettable one for you!', 'Happy birthday dear friend, may today be everything you wish for!'], ['May this day bring only positive energy, happiness and joy!', 'May this day bring nothing but great times to you!'], ['A special day full of blessings, may your birthday blesses you with everything!', 'May today be the best of all!'], ['Celebrate your day in style, may it be the most memorable one!', 'Happy birthday dear friend, let's make this one even more special!'], ['May this day bring you all the happiness and joy, may this day last forever!', 'Happy birthday to you, may today be everything you wish for!'], ['May your birthday be full of laughter and smiles, may it bring you nothing but joy!', 'Let's celebrate your special day with lots of laughter!'], ['A heartfelt wish for this wonderful day, a happy birthday to you!', 'Wishing you all the best on your birthday!']]",
+              "validated_response": "[['A happy birthday to you!', 'Happy birthday to you!'], ['May your birthday be filled with joy and laughter!', 'Birthday wishes for you!'], ['From the bottom of our hearts, we wish you a fantastic day!', 'Wishing you a happy birthday from us!'], ['Let's have some fun together, make the most out of this day!', 'Happy birthday to our dear friend, may your day be filled with joy and laughter!'], ['May this day be an unforgettable one for you!', 'Happy birthday dear friend, may today be everything you wish for!'], ['May this day bring only positive energy, happiness and joy!', 'May this day bring nothing but great times to you!'], ['A special day full of blessings, may your birthday blesses you with everything!', 'May today be the best of all!'], ['Celebrate your day in style, may it be the most memorable one!', 'Happy birthday dear friend, let's make this one even more special!'], ['May this day bring you all the happiness and joy, may this day last forever!', 'Happy birthday to you, may today be everything you wish for!'], ['May your birthday be full of laughter and smiles, may it bring you nothing but joy!', 'Let's celebrate your special day with lots of laughter!'], ['A heartfelt wish for this wonderful day, a happy birthday to you!', 'Wishing you all the best on your birthday!']]",
+              "response_time": 1.6062874794006348,
+              "score": 0.4666666666666667,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.5333333333333333,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.9
+              }
+            },
+            {
+              "test_item_id": "pb_006",
+              "input": "hospital",
+              "prompt": "Generate 12 words/phrases for topic: hospital. Return only as CSV format, one per line, no explanations:",
+              "response": "[['Airport', 'Airline'], ['Coffee shop', 'Restaurant']]\n[['Attraction', 'Amusement park'], ['Concert hall', 'Museum']]\n[['Restaurant', 'Bakery'], ['Fitness center', 'Coffee shop']]\n[['Healthcare facility', 'Nursing home'], ['Daycare center', 'Pharmacy']]\n[['Gym', 'Yoga studio'], ['Spa', 'Telemedicine service']]\n[['Clinic', 'Medical lab'], ['Salon', 'Health inspector']]\n[['Massage therapist', 'Dental clinic'], ['Physical therapy center', 'Public toilet']]\n[['Hotel', 'Apartment complex'], ['Motel', 'Court']]\n[['Law office', 'Home improvement store'], ['Nursing home', 'Veterinary clinic']]\n[['Medical center', 'Dental office'], ['Yoga studio', 'Pet groomer']]\n[['Hospital', 'Museum'], ['School', 'Conservatory']]",
+              "validated_response": "[['Airport', 'Airline'], ['Coffee shop', 'Restaurant']] [['Attraction', 'Amusement park'], ['Concert hall', 'Museum']] [['Restaurant', 'Bakery'], ['Fitness center', 'Coffee shop']] [['Healthcare facility', 'Nursing home'], ['Daycare center', 'Pharmacy']] [['Gym', 'Yoga studio'], ['Spa', 'Telemedicine service']] [['Clinic', 'Medical lab'], ['Salon', 'Health inspector']] [['Massage therapist', 'Dental clinic'], ['Physical therapy center', 'Public toilet']] [['Hotel', 'Apartment complex'], ['Motel', 'Court']] [['Law office', 'Home improvement store'], ['Nursing home', 'Veterinary clinic']] [['Medical center', 'Dental office'], ['Yoga studio', 'Pet groomer']] [['Hospital', 'Museum'], ['School', 'Conservatory']]",
+              "response_time": 1.2282586097717285,
+              "score": 0.30000000000000004,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_007",
+              "input": "shopping",
+              "prompt": "Generate 12 words/phrases for topic: shopping. Return only as CSV format, one per line, no explanations:",
+              "response": "CSV Format:\n\nshopming,shoping,shoping",
+              "validated_response": "CSV Format: shopming,shoping,shoping",
+              "response_time": 0.1059732437133789,
+              "score": 0.32000000000000006,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.1
+              }
+            },
+            {
+              "test_item_id": "pb_008",
+              "input": "transportation",
+              "prompt": "Generate 12 words/phrases for topic: transportation. Return only as CSV format, one per line, no explanations:",
+              "response": "[[\"Transportation\", \"transportation\", \"transportation\"], [\"Transportation is essential to daily life and economy. It's a key element of modern society. It is also the largest sector in the world economy, with trillions of dollars spent annually on transportation services. The transportation industry has evolved over time from horse-drawn wagons to automobiles, trains, planes, and now electric vehicles. As a result of advancements in technology, it's become more efficient, environmentally friendly and affordable for consumers.\"], [\"Transportation plays a vital role in connecting people and goods across distances while reducing carbon emissions, thereby contributing to the global fight against climate change. It facilitates the movement of cargo such as products, food, and raw materials from one location to another without compromising the quality of their delivery. The transportation industry is also instrumental in promoting economic development by providing access to markets and businesses for new ventures. Furthermore, it serves as a crucial service to governments, enabling them to manage their budgets efficiently while maintaining social stability. In conclusion, transportation has become an integral part of the modern society, allowing people to live their lives more comfortably and enjoyably.\"], [\"The global transportation industry has experienced unprecedented growth in recent years. The rise of automotive manufacturers and the digitalization of the industry have transformed transportation infrastructure while improving efficiency, safety, and customer service. As a result, the transportation industry is expected to continue growing at a CAGR of 5.2% through 2030.\"], [\"Transportation is essential for sustainable development as it enables economies to thrive, reduce environmental pollution, and support economic growth. The industry's adoption of green technologies such as electric vehicles, hydrogen fuel cells, and renewable energy sources has significantly reduced carbon emissions, thereby mitigating the effects of climate change.\"], [\"The transportation industry employs millions of people globally, generating billions in revenue for businesses and governments alike. As the industry continues to evolve, it's essential that policymakers and regulators invest in research and development, infrastructure expansion, and public education to ensure that this sector continues to thrive.\"], [\"In conclusion, transportation is an indispensable component of modern society. It facilitates economic growth, reduces carbon emissions, enables efficient management of resources, and promotes sustainable development. As technology advances, the industry will continue to evolve and drive innovation, providing unparalleled opportunities for businesses and consumers alike.\"], [\"Transportation is an essential service that cannot be ignored. It's crucial for people's quality of life, economy's growth, and the environment's preservation. As such, governments must continue to prioritize and invest in these industries to ensure their continued success,\" concluded in a report by OCW Consulting.]",
+              "validated_response": "[[\"Transportation\", \"transportation\", \"transportation\"], [\"Transportation is essential to daily life and economy. It's a key element of modern society. It is also the largest sector in the world economy, with trillions of dollars spent annually on transportation services. The transportation industry has evolved over time from horse-drawn wagons to automobiles, trains, planes, and now electric vehicles. As a result of advancements in technology, it's become more efficient, environmentally friendly and affordable for consumers.\"], [\"Transportation plays a vital role in connecting people and goods across distances while reducing carbon emissions, thereby contributing to the global fight against climate change. It facilitates the movement of cargo such as products, food, and raw materials from one location to another without compromising the quality of their delivery. The transportation industry is also instrumental in promoting economic development by providing access to markets and businesses for new ventures. Furthermore, it serves as a crucial service to governments, enabling them to manage their budgets efficiently while maintaining social stability. In conclusion, transportation has become an integral part of the modern society, allowing people to live their lives more comfortably and enjoyably.\"], [\"The global transportation industry has experienced unprecedented growth in recent years. The rise of automotive manufacturers and the digitalization of the industry have transformed transportation infrastructure while improving efficiency, safety, and customer service. As a result, the transportation industry is expected to continue growing at a CAGR of 5.2% through 2030.\"], [\"Transportation is essential for sustainable development as it enables economies to thrive, reduce environmental pollution, and support economic growth. The industry's adoption of green technologies such as electric vehicles, hydrogen fuel cells, and renewable energy sources has significantly reduced carbon emissions, thereby mitigating the effects of climate change.\"], [\"The transportation industry employs millions of people globally, generating billions in revenue for businesses and governments alike. As the industry continues to evolve, it's essential that policymakers and regulators invest in research and development, infrastructure expansion, and public education to ensure that this sector continues to thrive.\"], [\"In conclusion, transportation is an indispensable component of modern society. It facilitates economic growth, reduces carbon emissions, enables efficient management of resources, and promotes sustainable development. As technology advances, the industry will continue to evolve and drive innovation, providing unparalleled opportunities for businesses and consumers alike.\"], [\"Transportation is an essential service that cannot be ignored. It's crucial for people's quality of life, economy's growth, and the environment's preservation. As such, governments must continue to prioritize and invest in these industries to ensure their continued success,\" concluded in a report by OCW Consulting.]",
+              "response_time": 2.966679334640503,
+              "score": 0.30000000000000004,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.0,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            }
+          ],
+          "overall_score": 0.33329861111111114,
+          "execution_time": 10.039488792419434,
+          "summary_metrics": {
+            "avg_response_time": 1.2546012103557587,
+            "min_response_time": 0.1059732437133789,
+            "max_response_time": 2.966679334640503,
+            "total_response_time": 10.03680968284607,
+            "avg_score": 0.33329861111111114,
+            "min_score": 0.26722222222222225,
+            "max_score": 0.4666666666666667,
+            "score_std": 0.07395528255873376
+          },
+          "success_rate": 0.0
+        }
+      },
+      "performance_metrics": {
+        "text_correction": {
+          "duration": 1.9100005626678467,
+          "start_time": "2025-06-25T18:34:24.781476",
+          "end_time": "2025-06-25T18:34:26.691477",
+          "sample_count": 4,
+          "sampling_interval": 0.5,
+          "response_time": 1.9100005626678467,
+          "cpu_usage": {
+            "average": 17.175,
+            "peak": 25.0,
+            "minimum": 0.0,
+            "std_dev": 11.545958889008165
+          },
+          "memory_usage_mb": {
+            "average": 12976.9462890625,
+            "peak": 12979.109375,
+            "minimum": 12972.875,
+            "std_dev": 2.829937938643225
+          },
+          "memory_usage_percent": {
+            "average": 83.4,
+            "peak": 83.4,
+            "minimum": 83.4,
+            "std_dev": 0.0
+          },
+          "peak_memory_mb": 12979.109375,
+          "io_metrics": {
+            "disk_read_mb": 0.0625,
+            "disk_write_mb": 0.11328125,
+            "network_sent_mb": 0.0115814208984375,
+            "network_recv_mb": 0.7577018737792969
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        },
+        "utterance_suggestions": {
+          "duration": 7.942933559417725,
+          "start_time": "2025-06-25T18:34:26.909142",
+          "end_time": "2025-06-25T18:34:34.852075",
+          "sample_count": 14,
+          "sampling_interval": 0.5,
+          "response_time": 7.942933559417725,
+          "cpu_usage": {
+            "average": 44.800000000000004,
+            "peak": 100.0,
+            "minimum": 0.0,
+            "std_dev": 39.21212528326881
+          },
+          "memory_usage_mb": {
+            "average": 13133.207589285714,
+            "peak": 13567.5234375,
+            "minimum": 12977.58984375,
+            "std_dev": 230.20364582793675
+          },
+          "memory_usage_percent": {
+            "average": 84.41428571428571,
+            "peak": 87.2,
+            "minimum": 83.4,
+            "std_dev": 1.481608867132224
+          },
+          "peak_memory_mb": 13567.5234375,
+          "io_metrics": {
+            "disk_read_mb": 10.8056640625,
+            "disk_write_mb": 27.28125,
+            "network_sent_mb": 0.023702621459960938,
+            "network_recv_mb": 1.435281753540039
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        },
+        "phrase_boards": {
+          "duration": 10.19798755645752,
+          "start_time": "2025-06-25T18:34:35.384226",
+          "end_time": "2025-06-25T18:34:45.582214",
+          "sample_count": 20,
+          "sampling_interval": 0.5,
+          "response_time": 10.19798755645752,
+          "cpu_usage": {
+            "average": 38.98999999999999,
+            "peak": 100.0,
+            "minimum": 20.3,
+            "std_dev": 26.667581343962222
+          },
+          "memory_usage_mb": {
+            "average": 13064.9888671875,
+            "peak": 13336.9921875,
+            "minimum": 12993.640625,
+            "std_dev": 93.0173512278798
+          },
+          "memory_usage_percent": {
+            "average": 83.98500000000001,
+            "peak": 85.7,
+            "minimum": 83.5,
+            "std_dev": 0.5833433583098456
+          },
+          "peak_memory_mb": 13336.9921875,
+          "io_metrics": {
+            "disk_read_mb": 17.4501953125,
+            "disk_write_mb": 8.0390625,
+            "network_sent_mb": 0.06250953674316406,
+            "network_recv_mb": 1.6955089569091797
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        }
+      },
+      "summary": {
+        "total_tests": 3,
+        "successful_tests": 3,
+        "average_response_time": 6.683640559514363,
+        "average_memory_usage": 13294.541666666666,
+        "overall_score": 0.5209355429393393
+      }
+    },
+    "gemma3:1b-it-qat": {
+      "model_name": "gemma3:1b-it-qat",
+      "test_results": {
+        "text_correction": {
+          "test_name": "Text Correction for AAC Users",
+          "total_tests": 10,
+          "passed_tests": 9,
+          "failed_tests": 1,
+          "individual_results": [
+            {
+              "test_item_id": "tc_001",
+              "input": "me want eat pizza now hungry",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: me want eat pizza now hungry",
+              "response": "I want to eat pizza now I’m hungry.",
+              "validated_response": "I want to eat pizza now I’m hungry.",
+              "response_time": 0.15758895874023438,
+              "score": 0.89,
+              "passed": true,
+              "feedback": "Excellent correction!",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.8,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.7
+              }
+            },
+            {
+              "test_item_id": "tc_002",
+              "input": "doctor appointment tomorrow need remember",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: doctor appointment tomorrow need remember",
+              "response": "Remember the doctor’s appointment tomorrow.",
+              "validated_response": "Remember the doctor’s appointment tomorrow.",
+              "response_time": 0.13062024116516113,
+              "score": 0.71,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.4,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.3
+              }
+            },
+            {
+              "test_item_id": "tc_003",
+              "input": "car broken can't go work today",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: car broken can't go work today",
+              "response": "car can't go work today.",
+              "validated_response": "car can't go work today.",
+              "response_time": 0.13088226318359375,
+              "score": 0.7775757575757576,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.9,
+                "completeness_score": 0.6666666666666666,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.45454545454545453
+              }
+            },
+            {
+              "test_item_id": "tc_004",
+              "input": "happy birthday mom love you much",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: happy birthday mom love you much",
+              "response": "Happy birthday mom, love you.",
+              "validated_response": "Happy birthday mom, love you.",
+              "response_time": 0.11703610420227051,
+              "score": 0.7888888888888889,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.6,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.4444444444444444
+              }
+            },
+            {
+              "test_item_id": "tc_005",
+              "input": "weather cold outside need jacket warm",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: weather cold outside need jacket warm",
+              "response": "weather cold outside need jacket warm",
+              "validated_response": "weather cold outside need jacket warm",
+              "response_time": 0.11512517929077148,
+              "score": 0.8066666666666666,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 1.0,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.3333333333333333
+              }
+            },
+            {
+              "test_item_id": "tc_006",
+              "input": "phone battery dead charge it please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: phone battery dead charge it please",
+              "response": "Phone battery died, please.",
+              "validated_response": "Phone battery died, please.",
+              "response_time": 0.11035871505737305,
+              "score": 0.6900000000000001,
+              "passed": false,
+              "feedback": "Good correction with room for improvement. Some key information from the original text may be missing. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.4,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.2
+              }
+            },
+            {
+              "test_item_id": "tc_007",
+              "input": "store buy milk bread eggs list",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: store buy milk bread eggs list",
+              "response": "buy milk bread eggs list",
+              "validated_response": "buy milk bread eggs list",
+              "response_time": 0.11499810218811035,
+              "score": 0.7269047619047619,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.14285714285714285
+              }
+            },
+            {
+              "test_item_id": "tc_008",
+              "input": "tired sleep early tonight work tomorrow",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: tired sleep early tonight work tomorrow",
+              "response": "tired sleep early tomorrow work",
+              "validated_response": "tired sleep early tomorrow work",
+              "response_time": 0.1076664924621582,
+              "score": 0.7598717948717949,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 0.8,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.3076923076923077
+              }
+            },
+            {
+              "test_item_id": "tc_009",
+              "input": "friend birthday party saturday fun time",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: friend birthday party saturday fun time",
+              "response": "Friend birthday party Saturday fun time.",
+              "validated_response": "Friend birthday party Saturday fun time.",
+              "response_time": 0.12437748908996582,
+              "score": 0.8116666666666666,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.26666666666666666
+              }
+            },
+            {
+              "test_item_id": "tc_010",
+              "input": "computer slow need fix help please",
+              "prompt": "Fix this sentence. Return only the corrected sentence, no explanations: computer slow need fix help please",
+              "response": "Computer slow need fix help please.",
+              "validated_response": "Computer slow need fix help please.",
+              "response_time": 0.11850690841674805,
+              "score": 0.825,
+              "passed": true,
+              "feedback": "Good correction with room for improvement. The original meaning may not be fully preserved.",
+              "metrics": {
+                "grammar_score": 1.0,
+                "completeness_score": 0.8333333333333334,
+                "naturalness_score": 1.0,
+                "semantic_preservation": 0.3333333333333333
+              }
+            }
+          ],
+          "overall_score": 0.7786574536574536,
+          "execution_time": 1.2291526794433594,
+          "summary_metrics": {
+            "avg_response_time": 0.12271604537963868,
+            "min_response_time": 0.1076664924621582,
+            "max_response_time": 0.15758895874023438,
+            "total_response_time": 1.2271604537963867,
+            "avg_score": 0.7786574536574536,
+            "min_score": 0.6900000000000001,
+            "max_score": 0.89,
+            "score_std": 0.059749479615728934
+          },
+          "success_rate": 0.9
+        },
+        "utterance_suggestions": {
+          "test_name": "Utterance Suggestion Generation",
+          "total_tests": 10,
+          "passed_tests": 4,
+          "failed_tests": 6,
+          "individual_results": [
+            {
+              "test_item_id": "us_001",
+              "input": "pizza vegetarian",
+              "prompt": "Create 4 different sentences using: pizza vegetarian. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are 4 different sentences using \"pizza vegetarian\":\n\n1.  **We’re planning a delicious pizza night, and this time we’re opting for a veggie pizza with all the toppings.**\n2.  **The restaurant offered a surprisingly flavorful pizza vegetarian option that was a real crowd-pleaser.**\n3.  **Instead of traditional cheese and pepperoni, they served a hearty pizza with a rich tomato sauce and fresh vegetables.**\n4.  **As a healthy meal, I chose a pizza with just spinach and mushrooms – it's a tasty and vegetarian alternative to a standard pizza.**",
+              "validated_response": "Here are 4 different sentences using \"pizza vegetarian\": 1. **We’re planning a delicious pizza night, and this time we’re opting for a veggie pizza with all the toppings.** 2. **The restaurant offered a surprisingly flavorful pizza vegetarian option that was a real crowd-pleaser.** 3. **Instead of traditional cheese and pepperoni, they served a hearty pizza with a rich tomato sauce and fresh vegetables.** 4. **As a healthy meal, I chose a pizza with just spinach and mushrooms – it's a tasty and vegetarian alternative to a standard pizza.**",
+              "response_time": 1.0350477695465088,
+              "score": 0.7236321271929824,
+              "passed": true,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.503234649122807,
+                "diversity_score": 0.85,
+                "quality_score": 0.675
+              }
+            },
+            {
+              "test_item_id": "us_002",
+              "input": "doctor appointment",
+              "prompt": "Create 4 different sentences using: doctor appointment. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are four different sentences using \"doctor appointment\":\n\n1.  I need to schedule a doctor appointment to discuss my ongoing health concerns.\n2.  I’m looking forward to my next doctor appointment to get a checkup.\n3.  The doctor’s office confirmed an appointment for a routine physical exam.\n4.  Unfortunately, I missed my last doctor appointment and need to book another one soon.",
+              "validated_response": "Here are four different sentences using \"doctor appointment\": 1. I need to schedule a doctor appointment to discuss my ongoing health concerns. 2. I’m looking forward to my next doctor appointment to get a checkup. 3. The doctor’s office confirmed an appointment for a routine physical exam. 4. Unfortunately, I missed my last doctor appointment and need to book another one soon.",
+              "response_time": 0.7259061336517334,
+              "score": 0.7892930107526881,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Phrases are well-formed and complete. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.7016666666666667,
+                "diversity_score": 0.8548387096774194,
+                "quality_score": 0.95
+              }
+            },
+            {
+              "test_item_id": "us_003",
+              "input": "tired sleep",
+              "prompt": "Create 4 different sentences using: tired sleep. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Okay, here are four different sentences using the word \"tired sleep\":\n\n1.  After a long day, she slumped into the bed, completely **tired sleep** washing over her.\n2.  The kids were exhausted from their afternoon games, desperately needing a long, restful **tired sleep**.\n3.  He struggled to stay awake, battling a relentless wave of **tired sleep** and a need for coffee.\n4.  The ancient forest felt particularly still and silent, a perfect place for someone to drift into a deep, restorative **tired sleep**.",
+              "validated_response": "Okay, here are four different sentences using the word \"tired sleep\": 1. After a long day, she slumped into the bed, completely **tired sleep** washing over her. 2. The kids were exhausted from their afternoon games, desperately needing a long, restful **tired sleep**. 3. He struggled to stay awake, battling a relentless wave of **tired sleep** and a need for coffee. 4. The ancient forest felt particularly still and silent, a perfect place for someone to drift into a deep, restorative **tired sleep**.",
+              "response_time": 0.9653024673461914,
+              "score": 0.5853637690223057,
+              "passed": false,
+              "feedback": "8 phrases generated. 3-5 is ideal for AAC users. Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 8,
+                "completeness_score": 0.7,
+                "relevance_score": 0.2594017094017094,
+                "diversity_score": 0.8682926829268293,
+                "quality_score": 0.6875
+              }
+            },
+            {
+              "test_item_id": "us_004",
+              "input": "help computer",
+              "prompt": "Create 4 different sentences using: help computer. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are four different sentences using \"help computer\":\n\n1.  I need help with my computer because I’m struggling to troubleshoot the error message.\n2.  Can you help me with the computer when I need to update my software?\n3.  The computer kept crashing, so I asked for assistance from a tech support person.\n4.  It’s incredibly frustrating to deal with the computer; perhaps some help would be beneficial.",
+              "validated_response": "Here are four different sentences using \"help computer\": 1. I need help with my computer because I’m struggling to troubleshoot the error message. 2. Can you help me with the computer when I need to update my software? 3. The computer kept crashing, so I asked for assistance from a tech support person. 4. It’s incredibly frustrating to deal with the computer; perhaps some help would be beneficial.",
+              "response_time": 0.7931797504425049,
+              "score": 0.7046390374331551,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Phrases are well-formed and complete. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.5077922077922078,
+                "diversity_score": 0.8676470588235294,
+                "quality_score": 0.8500000000000001
+              }
+            },
+            {
+              "test_item_id": "us_005",
+              "input": "birthday party friend",
+              "prompt": "Create 4 different sentences using: birthday party friend. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are four different sentences using “birthday party friend”:\n\n1.  My birthday party friend helped me decorate the cake with colorful sprinkles.\n2.  She was thrilled to be a birthday party friend and helped me plan the games.\n3.  The birthday party friend shared stories and laughter throughout the afternoon.\n4.  I really appreciate my birthday party friend for always being there to celebrate with me.",
+              "validated_response": "Here are four different sentences using “birthday party friend”: 1. My birthday party friend helped me decorate the cake with colorful sprinkles. 2. She was thrilled to be a birthday party friend and helped me plan the games. 3. The birthday party friend shared stories and laughter throughout the afternoon. 4. I really appreciate my birthday party friend for always being there to celebrate with me.",
+              "response_time": 0.7165052890777588,
+              "score": 0.7890965855498963,
+              "passed": true,
+              "feedback": "Good number of phrases (5). Phrases are well-formed and complete. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 5,
+                "completeness_score": 1.0,
+                "relevance_score": 0.6201837928153717,
+                "diversity_score": 0.8161290322580645,
+                "quality_score": 0.8400000000000001
+              }
+            },
+            {
+              "test_item_id": "us_006",
+              "input": "weather cold jacket",
+              "prompt": "Create 4 different sentences using: weather cold jacket. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are four different sentences using \"weather cold jacket\":\n\n1.  The cold weather meant I needed a warm jacket to stay comfortable.\n2.  I pulled my old, weathered jacket tighter as the weather turned chilly.\n3.  Wearing a heavy, waterproof jacket against the cold weather was essential.\n4.  Despite the sunshine, the cold weather made me want to wear a stylish, insulated jacket.",
+              "validated_response": "Here are four different sentences using \"weather cold jacket\": 1. The cold weather meant I needed a warm jacket to stay comfortable. 2. I pulled my old, weathered jacket tighter as the weather turned chilly. 3. Wearing a heavy, waterproof jacket against the cold weather was essential. 4. Despite the sunshine, the cold weather made me want to wear a stylish, insulated jacket.",
+              "response_time": 0.722902774810791,
+              "score": 0.7748224043715847,
+              "passed": true,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.6119047619047618,
+                "diversity_score": 0.8426229508196721,
+                "quality_score": 0.75
+              }
+            },
+            {
+              "test_item_id": "us_007",
+              "input": "store buy milk",
+              "prompt": "Create 4 different sentences using: store buy milk. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are 4 sentences using \"store buy milk\":\n\n1.  I need to **store buy milk** at the local grocery store before it spoils.\n2.  She decided to **store buy milk** to make a delicious homemade latte.\n3.  The store offered a discount on **store buy milk** today, saving us a few dollars.\n4.  We’ll **store buy milk** in a cooler so it stays fresh for the week.",
+              "validated_response": "Here are 4 sentences using \"store buy milk\": 1. I need to **store buy milk** at the local grocery store before it spoils. 2. She decided to **store buy milk** to make a delicious homemade latte. 3. The store offered a discount on **store buy milk** today, saving us a few dollars. 4. We’ll **store buy milk** in a cooler so it stays fresh for the week.",
+              "response_time": 0.8267664909362793,
+              "score": 0.7319511533242876,
+              "passed": false,
+              "feedback": "Only 2 phrase(s) generated. Aim for 3-5 phrases. Most phrases are good quality. Phrases are mostly relevant. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 2,
+                "completeness_score": 0.7,
+                "relevance_score": 0.6763636363636363,
+                "diversity_score": 0.8208955223880597,
+                "quality_score": 0.75
+              }
+            },
+            {
+              "test_item_id": "us_008",
+              "input": "phone call mom",
+              "prompt": "Create 4 different sentences using: phone call mom. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are four different sentences using “phone call mom”:\n\n1.  I decided to make a phone call mom to check in on her after a long week.\n2.  She nervously dialed her phone call mom, hoping for a quick update on her family.\n3.  The hurried phone call mom revealed a surprise – her daughter had just moved!\n4.  I spent an hour on the phone call mom, sharing a heartfelt conversation about her health.",
+              "validated_response": "Here are four different sentences using “phone call mom”: 1. I decided to make a phone call mom to check in on her after a long week. 2. She nervously dialed her phone call mom, hoping for a quick update on her family. 3. The hurried phone call mom revealed a surprise – her daughter had just moved! 4. I spent an hour on the phone call mom, sharing a heartfelt conversation about her health.",
+              "response_time": 0.8089799880981445,
+              "score": 0.7266436781609196,
+              "passed": true,
+              "feedback": "Good number of phrases (3). Phrases are well-formed and complete. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 3,
+                "completeness_score": 1.0,
+                "relevance_score": 0.46469622331691296,
+                "diversity_score": 0.8160000000000001,
+                "quality_score": 0.8000000000000002
+              }
+            },
+            {
+              "test_item_id": "us_009",
+              "input": "work meeting important",
+              "prompt": "Create 4 different sentences using: work meeting important. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Okay, here are four different sentences using \"work meeting important\":\n\n1.  The recent work meeting was crucial for finalizing the project timeline, making it undeniably important.\n2.  Despite potential distractions, the work meeting was incredibly important for ensuring everyone was aligned on our strategy.\n3.  The importance of the work meeting cannot be overstated; it was vital for addressing a critical issue within the team.\n4.  Without a productive work meeting, the important work we're attempting to accomplish will likely fall short.",
+              "validated_response": "Okay, here are four different sentences using \"work meeting important\": 1. The recent work meeting was crucial for finalizing the project timeline, making it undeniably important. 2. Despite potential distractions, the work meeting was incredibly important for ensuring everyone was aligned on our strategy. 3. The importance of the work meeting cannot be overstated; it was vital for addressing a critical issue within the team. 4. Without a productive work meeting, the important work we're attempting to accomplish will likely fall short.",
+              "response_time": 0.9107155799865723,
+              "score": 0.6884069865319865,
+              "passed": false,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.39756493506493507,
+                "diversity_score": 0.837037037037037,
+                "quality_score": 0.7
+              }
+            },
+            {
+              "test_item_id": "us_010",
+              "input": "happy excited vacation",
+              "prompt": "Create 4 different sentences using: happy excited vacation. Format: sentence1, sentence2, sentence3, sentence4",
+              "response": "Here are four different sentences using “happy excited vacation”:\n\n1.  After a long week, we were so **happy excited vacation** and eager to explore new places.\n2.  Her face was **happy excited vacation** as she packed her bags and dreamed of sun-soaked beaches.\n3.  The kids were bursting with **happy excited vacation** energy, running and laughing throughout the day.\n4.  Even though the journey was long, the feeling of **happy excited vacation** made it all worthwhile.",
+              "validated_response": "Here are four different sentences using “happy excited vacation”: 1. After a long week, we were so **happy excited vacation** and eager to explore new places. 2. Her face was **happy excited vacation** as she packed her bags and dreamed of sun-soaked beaches. 3. The kids were bursting with **happy excited vacation** energy, running and laughing throughout the day. 4. Even though the journey was long, the feeling of **happy excited vacation** made it all worthwhile.",
+              "response_time": 0.922156810760498,
+              "score": 0.6996895102339181,
+              "passed": false,
+              "feedback": "Good number of phrases (4). Most phrases are good quality. Phrases could be more relevant to the input keywords. Good variety in phrase structures.",
+              "metrics": {
+                "phrase_count": 4,
+                "completeness_score": 1.0,
+                "relevance_score": 0.397609126984127,
+                "diversity_score": 0.8421052631578947,
+                "quality_score": 0.75
+              }
+            }
+          ],
+          "overall_score": 0.7213538262573725,
+          "execution_time": 8.43017292022705,
+          "summary_metrics": {
+            "avg_response_time": 0.8427463054656983,
+            "min_response_time": 0.7165052890777588,
+            "max_response_time": 1.0350477695465088,
+            "total_response_time": 8.427463054656982,
+            "avg_score": 0.7213538262573725,
+            "min_score": 0.5853637690223057,
+            "max_score": 0.7892930107526881,
+            "score_std": 0.060126437400398254
+          },
+          "success_rate": 0.4
+        },
+        "phrase_boards": {
+          "test_name": "Topic-Based Phrase Board Generation",
+          "total_tests": 8,
+          "passed_tests": 0,
+          "failed_tests": 8,
+          "individual_results": [
+            {
+              "test_item_id": "pb_001",
+              "input": "dogs",
+              "prompt": "Generate 12 words/phrases for topic: dogs. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\ndog,bark,leash,treat,playtime,pup,tail,friendly,fetch,walk,golden,labrador,rescue,cuddle\n```",
+              "validated_response": "```csv dog,bark,leash,treat,playtime,pup,tail,friendly,fetch,walk,golden,labrador,rescue,cuddle ```",
+              "response_time": 0.3616940975189209,
+              "score": 0.38166666666666665,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.2333333333333333,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_002",
+              "input": "cooking",
+              "prompt": "Generate 12 words/phrases for topic: cooking. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\n\"Mastering Knife Skills\"\n\"Building a Flavorful Sauce\"\n\"Understanding Heat Control\"\n\"The Importance of Seasoning\"\n\"Quick & Easy Recipes\"\n\"Baking Basics for Beginners\"\n\"Food Safety Practices\"\n\"Knife Sharpener Guide\"\n\"Preserving Fruits and Vegetables\"\n\"Intuitive Cooking Techniques\"\n\"Creating a Balanced Meal\"\n\"Cooking with Herbs & Spices\"\n```",
+              "validated_response": "```csv \"Mastering Knife Skills\" \"Building a Flavorful Sauce\" \"Understanding Heat Control\" \"The Importance of Seasoning\" \"Quick & Easy Recipes\" \"Baking Basics for Beginners\" \"Food Safety Practices\" \"Knife Sharpener Guide\" \"Preserving Fruits and Vegetables\" \"Intuitive Cooking Techniques\" \"Creating a Balanced Meal\" \"Cooking with Herbs & Spices\" ```",
+              "response_time": 0.7994225025177002,
+              "score": 0.37687499999999996,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.3,
+                "relevance_score": 0.5625,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.6
+              }
+            },
+            {
+              "test_item_id": "pb_003",
+              "input": "school",
+              "prompt": "Generate 12 words/phrases for topic: school. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\nschool,students,teachers,grades,classes,curriculum,learning,education,schoollife,schoolwork,schoolrules,schoolbus,classroom,schoolyear\n```",
+              "validated_response": "```csv school,students,teachers,grades,classes,curriculum,learning,education,schoollife,schoolwork,schoolrules,schoolbus,classroom,schoolyear ```",
+              "response_time": 0.375262975692749,
+              "score": 0.405,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.3,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_004",
+              "input": "weather",
+              "prompt": "Generate 12 words/phrases for topic: weather. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\nweather,forecast,temperature,precipitation,windspeed,humidity,sunny,rainy,cloudy,snowy,storms\n```",
+              "validated_response": "```csv weather,forecast,temperature,precipitation,windspeed,humidity,sunny,rainy,cloudy,snowy,storms ```",
+              "response_time": 0.3318655490875244,
+              "score": 0.48666666666666664,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.5333333333333333,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_005",
+              "input": "birthday party",
+              "prompt": "Generate 12 words/phrases for topic: birthday party. Return only as CSV format, one per line, no explanations:",
+              "response": "“Happy Birthday”\n“Party planning”\n“Birthday cake”\n“Games and activities”\n“Decorations”\n“Guest list”\n“Favors”\n“Music playlist”\n“Birthday wishes”\n“Celebration”\n“Joyful”\n“Fun”",
+              "validated_response": "“Happy Birthday” “Party planning” “Birthday cake” “Games and activities” “Decorations” “Guest list” “Favors” “Music playlist” “Birthday wishes” “Celebration” “Joyful” “Fun”",
+              "response_time": 0.5419557094573975,
+              "score": 0.3025,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.3,
+                "relevance_score": 0.35,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.6
+              }
+            },
+            {
+              "test_item_id": "pb_006",
+              "input": "hospital",
+              "prompt": "Generate 12 words/phrases for topic: hospital. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\nhospital,Emergency room,Medical facility,Patient care,Doctor,Nurse,Medical staff,HIPAA,HIPPC,Medical equipment,Hospital bed,Medical records\n```",
+              "validated_response": "```csv hospital,Emergency room,Medical facility,Patient care,Doctor,Nurse,Medical staff,HIPAA,HIPPC,Medical equipment,Hospital bed,Medical records ```",
+              "response_time": 0.3580172061920166,
+              "score": 0.405,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Phrases are well-suited for AAC use.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.5,
+                "relevance_score": 0.3,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 1.0
+              }
+            },
+            {
+              "test_item_id": "pb_007",
+              "input": "shopping",
+              "prompt": "Generate 12 words/phrases for topic: shopping. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\nshopping_list\nbest_deals\nonline_retail\nbuy_now\nclothing_store\nelectronics_shop\ngrocery_market\nhome_goods_store\ncraft_fair\nvintage_clothing\nluxury_shopping\ndiscount_codes\nshopping_apps\n```",
+              "validated_response": "```csv shopping_list best_deals online_retail buy_now clothing_store electronics_shop grocery_market home_goods_store craft_fair vintage_clothing luxury_shopping discount_codes shopping_apps ```",
+              "response_time": 0.5341153144836426,
+              "score": 0.25,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.3,
+                "relevance_score": 0.19999999999999998,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.6
+              }
+            },
+            {
+              "test_item_id": "pb_008",
+              "input": "transportation",
+              "prompt": "Generate 12 words/phrases for topic: transportation. Return only as CSV format, one per line, no explanations:",
+              "response": "```csv\ntransportation\nbus\ntrain\nairplane\ncar\nbicycle\nmotorcycle\nship\ntrain\nhovercraft\ndrone\ntrain\nferry\n```",
+              "validated_response": "```csv transportation bus train airplane car bicycle motorcycle ship train hovercraft drone train ferry ```",
+              "response_time": 0.3415508270263672,
+              "score": 0.3038461538461538,
+              "passed": false,
+              "feedback": "Generated 1 phrases. Aim for exactly 12. CSV format could be improved. Phrases could be more relevant to the topic. Could use more diversity in phrase types. Most phrases are suitable for AAC users.",
+              "metrics": {
+                "phrase_count": 1,
+                "format_score": 0.3,
+                "relevance_score": 0.3538461538461538,
+                "diversity_score": 0.0,
+                "aac_suitability_score": 0.6
+              }
+            }
+          ],
+          "overall_score": 0.36394431089743584,
+          "execution_time": 3.6484525203704834,
+          "summary_metrics": {
+            "avg_response_time": 0.4554855227470398,
+            "min_response_time": 0.3318655490875244,
+            "max_response_time": 0.7994225025177002,
+            "total_response_time": 3.6438841819763184,
+            "avg_score": 0.36394431089743584,
+            "min_score": 0.25,
+            "max_score": 0.48666666666666664,
+            "score_std": 0.07491299548153336
+          },
+          "success_rate": 0.0
+        }
+      },
+      "performance_metrics": {
+        "text_correction": {
+          "duration": 1.2528495788574219,
+          "start_time": "2025-06-25T18:34:46.186422",
+          "end_time": "2025-06-25T18:34:47.439272",
+          "sample_count": 3,
+          "sampling_interval": 0.5,
+          "response_time": 1.2528495788574219,
+          "cpu_usage": {
+            "average": 13.233333333333334,
+            "peak": 22.1,
+            "minimum": 0.0,
+            "std_dev": 11.67918376143356
+          },
+          "memory_usage_mb": {
+            "average": 13008.087239583334,
+            "peak": 13014.6328125,
+            "minimum": 12997.2890625,
+            "std_dev": 9.42151249345815
+          },
+          "memory_usage_percent": {
+            "average": 83.60000000000001,
+            "peak": 83.7,
+            "minimum": 83.5,
+            "std_dev": 0.10000000000000142
+          },
+          "peak_memory_mb": 13014.6328125,
+          "io_metrics": {
+            "disk_read_mb": 0.0,
+            "disk_write_mb": 0.203125,
+            "network_sent_mb": 0.0001983642578125,
+            "network_recv_mb": 0.0008945465087890625
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        },
+        "utterance_suggestions": {
+          "duration": 8.449294328689575,
+          "start_time": "2025-06-25T18:34:47.747301",
+          "end_time": "2025-06-25T18:34:56.196595",
+          "sample_count": 17,
+          "sampling_interval": 0.5,
+          "response_time": 8.449294328689575,
+          "cpu_usage": {
+            "average": 24.15294117647059,
+            "peak": 39.3,
+            "minimum": 0.0,
+            "std_dev": 8.659757332559815
+          },
+          "memory_usage_mb": {
+            "average": 12978.863970588236,
+            "peak": 13036.01953125,
+            "minimum": 12930.015625,
+            "std_dev": 28.763742238715267
+          },
+          "memory_usage_percent": {
+            "average": 83.42941176470588,
+            "peak": 83.8,
+            "minimum": 83.1,
+            "std_dev": 0.1928882639067006
+          },
+          "peak_memory_mb": 13036.01953125,
+          "io_metrics": {
+            "disk_read_mb": 21.07958984375,
+            "disk_write_mb": 2.17578125,
+            "network_sent_mb": 0.042344093322753906,
+            "network_recv_mb": 0.9442129135131836
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        },
+        "phrase_boards": {
+          "duration": 3.6890370845794678,
+          "start_time": "2025-06-25T18:34:56.517705",
+          "end_time": "2025-06-25T18:35:00.206743",
+          "sample_count": 8,
+          "sampling_interval": 0.5,
+          "response_time": 3.6890370845794678,
+          "cpu_usage": {
+            "average": 19.812499999999996,
+            "peak": 29.4,
+            "minimum": 0.0,
+            "std_dev": 8.742905286982289
+          },
+          "memory_usage_mb": {
+            "average": 12941.9404296875,
+            "peak": 12973.453125,
+            "minimum": 12928.76171875,
+            "std_dev": 15.10118600884759
+          },
+          "memory_usage_percent": {
+            "average": 83.1875,
+            "peak": 83.4,
+            "minimum": 83.1,
+            "std_dev": 0.11259916264596408
+          },
+          "peak_memory_mb": 12973.453125,
+          "io_metrics": {
+            "disk_read_mb": 5.4208984375,
+            "disk_write_mb": 0.25,
+            "network_sent_mb": 0.014666557312011719,
+            "network_recv_mb": 0.5008506774902344
+          },
+          "system_info": {
+            "cpu_count": 16,
+            "cpu_count_logical": 16,
+            "total_memory_gb": 15.192249298095703,
+            "platform": true
+          }
+        }
+      },
+      "summary": {
+        "total_tests": 3,
+        "successful_tests": 3,
+        "average_response_time": 4.463726997375488,
+        "average_memory_usage": 13008.03515625,
+        "overall_score": 0.621318530270754
+      }
+    }
+  }
+}
